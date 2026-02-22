@@ -23,11 +23,11 @@ repository               : "sebastianruizsebas/site"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Sebastian Ruiz"
   pronouns         : "He/him" # example: "she/her"  
   bio              : "Interested in computational modeling methods applied to neuroscience and psychiatry."
-  location         : "Florida, USA (unfortunately)"
+  location         : "Florida, USA"
   employer         : "Florida State University"
   uri              : # URL
   email            : "sr23bt@fsu.edu" 
