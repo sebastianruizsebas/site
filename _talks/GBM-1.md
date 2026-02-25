@@ -1,5 +1,5 @@
 ---
-title: "Intro to Computational Neuroscience / CompNeuroSociety General Body Meeting 1"
+title: "Workshop: Intro to Computational Neuroscience / CompNeuroSociety General Body Meeting 1"
 collection: talks
 type: "Talk"
 permalink: /talks/2025-talk-1

@@ -1,5 +1,5 @@
 ---
-title: "Python for Neural Data Analysis"
+title: "Workshop: Python for Neural Data Analysis"
 collection: talks
 type: "Tutorial/Workshop"
 permalink: /talks/2025-10-18
