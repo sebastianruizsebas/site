@@ -24,4 +24,4 @@ Talk/Poster Map
 [Check out places I've been](https://www.sebasruiz.site/talkmap.html)
 
 
-<iframe src="/talkmap/map.html" height="700" width="850" style="border:none;"></iframe>
+<iframe src="https://www.sebasruiz.site/talkmap/map.html" height="700" width="850" style="border:none;"></iframe>
