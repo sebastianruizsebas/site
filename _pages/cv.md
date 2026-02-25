@@ -21,14 +21,12 @@ Education
 
 Research experience
 ======
-* 2026-2027
-  * Honors in the Major Researcher
+* 2026-2027: Honors in the Major Researcher
   * Thesis title: TBD
   * Committee Members: TBD
   * Supervisors: Assistant Professor of Statistics Partha Sarkar, Ph.D. (Florida State University), Assistant Professor of Psychiatry and Human Behavior, Mohamed Sherif, M.D., Ph.D (Brown University and Lifespan Physician Group).
 
-* 2025-2027
-  * Undergraduate Research Assistant
+* 2025-2027: Undergraduate Research Assistant
   * Duties included: Examine effects of sensory noise degradation on model behavior, and how it can be abstracted to represent psychiatric illnesses. Review recently published literature on the Thousand Brains System, Active Inference, and Predictive Coding.
   * Supervisors: Assistant Professor of Psychiatry and Human Behavior, Mohamed Sherif, M.D., Ph.D.
 
@@ -60,6 +58,8 @@ Skills
     * Matplotlib, SciPy, NumPy, Monty, Pandas, Keras, Cython
   * MATLAB (Beginner)
   * R (Beginner)
+  * Conda environments
+  * Linux
 
 * Computational Methods and Statistics
   * SAS Data Analysis
@@ -68,11 +68,11 @@ Skills
   * PCA
   * Optimization
 
-Publications
+<!-- Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
 Talks
 ======
@@ -80,11 +80,11 @@ Talks
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
   
-Teaching
+<!-- Teaching
 ======
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
 Service and leadership
 ======
