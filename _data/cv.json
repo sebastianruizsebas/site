@@ -4,7 +4,7 @@
     "email": "sr23bt@fsu.edu",
     "phone": "",
     "website": "https://www.sebasruiz.site",
-    "summary": "Currently employed at Florida State University. Interested in computational modeling methods applied to neuroscience and psychiatry.",
+    "summary": "Currently a student at Florida State University. Interested in computational modeling methods applied to neuroscience and psychiatry.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -62,16 +62,16 @@
       "institution": "Florida State University",
       "area": "B.S. in Statistics with Minors in Computational Science and Psychology",
       "studyType": "",
-      "startDate": "",
+      "startDate": "2024",
       "endDate": "2027",
       "gpa": null,
-      "courses": []
+      "courses": ["Computational Methods in Statistics, Computational Probabilistic Modeling, Fundamentals of Neuroscience, Calculus I-III, Linear Algebra, Symbolic and Numerical Computation, Programming for Science Applications"]
     },
     {
       "institution": "Palm Beach State College",
       "area": "A.A. in General Biology",
       "studyType": "",
-      "startDate": "",
+      "startDate": "2020",
       "endDate": "2023",
       "gpa": null,
       "courses": []
@@ -113,17 +113,34 @@
         "Bootstrap Hypothesis Testing",
         "Linear/Logistic Regression",
         "PCA",
-        "Optimization",
-        "<!-- Publications",
-        "<ul>{% for post in site.publications reversed %}",
-        "{% include archive-single-cv.html %}",
-        "{% endfor %}</ul> -->"
+        "Optimization"
       ]
     }
   ],
   "languages": [],
   "interests": [],
-  "references": [],
+  "references": [
+    {
+      "name": "Timothy Verstynen, Ph.D.",
+      "email": "timothyv@andrew.cmu.edu"
+    },
+    {
+      "name": "Mohamed Sherif, M.D., Ph.D.",
+      "email": "mohamed_sherif@brown.edu"
+    },
+    {
+      "name": "Carmen Varela, Ph.D.",
+      "email": "c.varela@fsu.edu"
+    },
+    {
+      "name": "Jack Burgess, Ph.D.",
+      "email": ""
+    },
+    {
+      "name": "Katherine Freeman-Costin, Ph.D.",
+      "email": "kfreemancostin@health.fau.edu"
+    }
+  ],
   "publications": [],
   "presentations": [
     {
@@ -155,21 +172,21 @@
       "category": "portfolio",
       "date": "2024-08-01",
       "url": "",
-      "description": "From summer internship at Carnegie Mellon University in Summer 2024<br/><img src='/images/IMG_7663.jpg'>"
+      "description": "From summer internship at Carnegie Mellon University in Summer 2024"
     },
     {
       "name": "Poster Presentation",
       "category": "portfolio",
       "date": "2025-07-31",
       "url": "",
-      "description": "From summer internship at Brown University in Summer 2025<br/><img src='../images/20250731_BrownPoster.jpg'>"
+      "description": "From summer internship at Brown University in Summer 2025"
     },
     {
       "name": "Poster Presentation",
       "category": "portfolio",
       "date": "2025-10-20",
       "url": "",
-      "description": "From Transfer Student Research and Leadership Symposium at Florida State University in Fall 2025<br/><img src='../images/20251020_TransferPoster.jpg'>"
+      "description": "From Transfer Student Research and Leadership Symposium at Florida State University in Fall 2025"
     }
   ]
 }

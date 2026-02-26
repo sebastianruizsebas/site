@@ -88,11 +88,11 @@ Service and leadership
 References
 ======
 * Timothy Verstynen, Ph.D.
-  * timothyv@andrew.cmu.edu
+* timothyv@andrew.cmu.edu
 * Mohamed Sherif, M.D., Ph.D.
-  * mohamed_sherif@brown.edu
+* mohamed_sherif@brown.edu
 * Carmen Varela, Ph.D.
-  * c.varela@fsu.edu
+* c.varela@fsu.edu
 * Jack Burgess, Ph.D.
 * Katherine Freeman-Costin
-  * kfreemancostin@health.fau.edu
+* kfreemancostin@health.fau.edu
