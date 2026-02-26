@@ -19,14 +19,14 @@ Education
 * A.A. in General Biology, Palm Beach State College, 2023
   * Cum Laude Distinction
 
-Research experience
+Work experience
 ======
-* 2026-2027: Honors in the Major Researcher
+* 2026-2027: Honors in the Major Researcher, Florida State University
   * Thesis title: TBD
   * Committee Members: TBD
   * Supervisors: Assistant Professor of Statistics Partha Sarkar, Ph.D. (Florida State University), Assistant Professor of Psychiatry and Human Behavior, Mohamed Sherif, M.D., Ph.D (Brown University and Lifespan Physician Group).
 
-* 2025-2027: Undergraduate Research Assistant
+* 2025-2027: Undergraduate Research Assistant, Brown University
   * Duties included: Examine effects of sensory noise degradation on model behavior, and how it can be abstracted to represent psychiatric illnesses. Review recently published literature on the Thousand Brains System, Active Inference, and Predictive Coding.
   * Supervisors: Assistant Professor of Psychiatry and Human Behavior, Mohamed Sherif, M.D., Ph.D.
 
@@ -48,25 +48,11 @@ Research experience
   
 Skills
 ======
-* Public Speaking
-  * Scientific Communication
-  * Active Participant Involvement
-  * Presentation Design
+Public Speaking: Scientific Communication, Active Participant Involvement, Presentation Design
 
-* Coding and Programming
-  * Python (Proficient)
-    * Matplotlib, SciPy, NumPy, Monty, Pandas, Keras, Cython
-  * MATLAB (Beginner)
-  * R (Beginner)
-  * Conda environments
-  * Linux
+Coding and Programming: Python (Proficient), Matplotlib, SciPy, NumPy, Monty, Pandas, Keras, Cython, MATLAB (Beginner), R (Beginner), Conda environments, Linux
 
-* Computational Methods and Statistics
-  * SAS Data Analysis
-  * Bootstrap Hypothesis Testing
-  * Linear/Logistic Regression
-  * PCA
-  * Optimization
+Computational Methods and Statistics: SAS Data Analysis, Bootstrap Hypothesis Testing, Linear/Logistic Regression, PCA, Optimization
 
 <!-- Publications
 ======
@@ -98,3 +84,15 @@ Service and leadership
     * Primary Applicant: Andre Quintero
     * Faculty Sponsors: Professor of Scientific Computing, Anke Meyer-Baese, Ph.D.
   * Organized a 4-hour Computational Neuroscience workshop over summer 2025 led by faculty and researchers from the Stiles Nicholson Brain Institute in Jupiter, Florida at no cost to participants.
+
+References
+======
+* Timothy Verstynen, Ph.D.
+  * timothyv@andrew.cmu.edu
+* Mohamed Sherif, M.D., Ph.D.
+  * mohamed_sherif@brown.edu
+* Carmen Varela, Ph.D.
+  * c.varela@fsu.edu
+* Jack Burgess, Ph.D.
+* Katherine Freeman-Costin
+  * kfreemancostin@health.fau.edu

@@ -1,152 +1,175 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "Sebastian Ruiz",
+    "email": "sr23bt@fsu.edu",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://www.sebasruiz.site",
+    "summary": "Currently employed at Florida State University. Interested in computational modeling methods applied to neuroscience and psychiatry.",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
+      "city": "Florida, USA",
       "countryCode": "US",
       "region": ""
     },
     "profiles": [
       {
-        "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-      },
-      {
         "network": "ORCID",
         "username": "",
-        "url": "https://orcid.org/yourorcidurl"
+        "url": "https://orcid.org/0009-0005-2598-1815"
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "sebastianruizsebas",
+        "url": "https://github.com/sebastianruizsebas"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "sebastiansebasruiz",
+        "url": "https://www.linkedin.com/in/sebastiansebasruiz"
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "company": "Florida State University",
+      "position": "2026-2027: Honors in the Major Researcher",
+      "website": "",
+      "startDate": "2026",
+      "endDate": "2027",
+      "summary": "",
+      "highlights": [
+        "Thesis title: TBD",
+        "Committee Members: TBD",
+        "Supervisors: Assistant Professor of Statistics Partha Sarkar, Ph.D. (Florida State University), Assistant Professor of Psychiatry and Human Behavior, Mohamed Sherif, M.D., Ph.D (Brown University and Lifespan Physician Group)."
+      ]
+    },
+    {
+      "company": "Brown University",
+      "position": "2025-2027: Undergraduate Research Assistant",
+      "website": "",
+      "startDate": "2025",
+      "endDate": "2027",
+      "summary": "",
+      "highlights": [
+        "Duties included: Examine effects of sensory noise degradation on model behavior, and how it can be abstracted to represent psychiatric illnesses. Review recently published literature on the Thousand Brains System, Active Inference, and Predictive Coding.",
+        "Supervisors: Assistant Professor of Psychiatry and Human Behavior, Mohamed Sherif, M.D., Ph.D."
+      ]
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
+      "institution": "Florida State University",
+      "area": "B.S. in Statistics with Minors in Computational Science and Psychology",
       "studyType": "",
       "startDate": "",
-      "endDate": "2018",
+      "endDate": "2027",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
+      "institution": "Palm Beach State College",
+      "area": "A.A. in General Biology",
       "studyType": "",
       "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
+      "endDate": "2023",
       "gpa": null,
       "courses": []
     }
   ],
-  "skills": [],
+  "skills": [
+    {
+      "name": "Public Speaking",
+      "level": "",
+      "keywords": [
+        "Scientific Communication",
+        "Active Participant Involvement",
+        "Presentation Design"
+      ]
+    },
+    {
+      "name": "Coding and Programming",
+      "level": "",
+      "keywords": [
+        "Python (Proficient)",
+        "Matplotlib",
+        "SciPy",
+        "NumPy",
+        "Monty",
+        "Pandas",
+        "Keras",
+        "Cython",
+        "MATLAB (Beginner)",
+        "R (Beginner)",
+        "Conda environments",
+        "Linux"
+      ]
+    },
+    {
+      "name": "Computational Methods and Statistics",
+      "level": "",
+      "keywords": [
+        "SAS Data Analysis",
+        "Bootstrap Hypothesis Testing",
+        "Linear/Logistic Regression",
+        "PCA",
+        "Optimization",
+        "<!-- Publications",
+        "<ul>{% for post in site.publications reversed %}",
+        "{% include archive-single-cv.html %}",
+        "{% endfor %}</ul> -->"
+      ]
+    }
+  ],
   "languages": [],
   "interests": [],
   "references": [],
-  "publications": [
-    {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "https://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
-    }
-  ],
+  "publications": [],
   "presentations": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
+      "name": "Workshop: Intro to Computational Neuroscience / CompNeuroSociety General Body Meeting 1",
+      "event": "Florida State University, Innovation Hub",
+      "date": "2025-03-04",
+      "location": "Tallahassee, FL, USA",
       "description": ""
     },
     {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
+      "name": "Collaborative Research Project Meeting",
+      "event": "Florida State University, Department of Psychology",
+      "date": "2026-02-09",
+      "location": "Tallahassee, FL, USA",
       "description": ""
     },
     {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
+      "name": "Workshop: Python for Neural Data Analysis",
+      "event": "Florida State University, Department of Psychology",
+      "date": "2025-10-18",
+      "location": "Tallahassee, FL, USA",
       "description": ""
     }
   ],
-  "teaching": [
-    {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
-    },
-    {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
-    }
-  ],
+  "teaching": [],
   "portfolio": [
     {
-      "name": "Portfolio item number 1",
+      "name": "Poster Presentation",
       "category": "portfolio",
-      "date": "",
+      "date": "2024-08-01",
       "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+      "description": "From summer internship at Carnegie Mellon University in Summer 2024<br/><img src='/images/IMG_7663.jpg'>"
+    },
+    {
+      "name": "Poster Presentation",
+      "category": "portfolio",
+      "date": "2025-07-31",
+      "url": "",
+      "description": "From summer internship at Brown University in Summer 2025<br/><img src='../images/20250731_BrownPoster.jpg'>"
+    },
+    {
+      "name": "Poster Presentation",
+      "category": "portfolio",
+      "date": "2025-10-20",
+      "url": "",
+      "description": "From Transfer Student Research and Leadership Symposium at Florida State University in Fall 2025<br/><img src='../images/20251020_TransferPoster.jpg'>"
     }
   ]
 }
