@@ -12,7 +12,8 @@ redirect_from:
 Education
 ======
 * B.S. in Statistics with Minors in Computational Science and Psychology, Florida State University, 2027 (expected)
-  * Campus Goldwater Scholar Nomination: 2026
+  * Goldwater Scholar: 2026
+  * Max Planck Florida Fellow: 2026
   * Palm Beach Seminole Club Scholarship: 2025
   * Johnson Scholar: 2024, 2025, 2026
 
@@ -21,10 +22,13 @@ Education
 
 Work experience
 ======
-* 2026-2027: Honors in the Major Researcher, Florida State University
-  * Thesis title: TBD
+* Aug 2026-May 2027: Honors in the Major Researcher, Florida State University
+  * Thesis title: Neurobiologically-Constrained Computational Formulation of Neocortical Predictive Coding
   * Committee Members: TBD
   * Supervisors: Assistant Professor of Statistics Partha Sarkar, Ph.D. (Florida State University), Assistant Professor of Psychiatry and Human Behavior, Mohamed Sherif, M.D., Ph.D (Brown University and Lifespan Physician Group).
+
+* Jun 2026-Aug 2026: Cech Fellow, Howard Hughes Medical Institute - Janelia Research Campus
+  * Supervisors: Dr. Srinivas Turaga, Dr. Gert-Jan Both.
 
 * 2025-2027: Undergraduate Research Assistant, Brown University
   * Duties included: Examine effects of sensory noise degradation on model behavior, and how it can be abstracted to represent psychiatric illnesses. Review recently published literature on the Thousand Brains System, Active Inference, and Predictive Coding.
@@ -80,9 +84,10 @@ Service and leadership
   * Led the preparation for accepted grant proposal ($14,450 USD) as the primary applicant to fund a collaborative Open Science computational neuroscience research project, which supported 3 faculty mentor stipends, and 8 undergraduate student stipends over the course of a semester.
     * Collaborating with newly founded chapter of CompNeuroSociety at Florida International University led by Ethan Johnson.
     * Mentors: Assistant Professor of Biological Sciences Rodrigo OF Pena, Ph.D., Postdoc Juan Lopez, Ph.D., Neuroscience Ph.D. Candidate Ty Roachford.
-  * Led the preparation of application materials for NeurIPS Bridging the Future grant to support undergraduate-led and faculty-mentored development of workshops and training materials related to the field of Brain Computer Interfaces, and AI/ML for  Neural Data Science. (pending)
+  * Led the preparation of application materials for NeurIPS Bridging the Future grant to support undergraduate-led and faculty-mentored development of workshops and training materials related to the field of Brain Computer Interfaces, and AI/ML for Neural Data Science. (pending)
     * Primary Applicant: Andre Quintero
     * Faculty Sponsors: Professor of Scientific Computing, Anke Meyer-Baese, Ph.D.
+  * Secured funding for 10 FSU students to attend a 2-day workshop and conference in Jupiter FL (SCAN 2026) on Computational Applications in Neuroscience as well as NeuroCollective Symposium
   * Organized a 4-hour Computational Neuroscience workshop over summer 2025 led by faculty and researchers from the Stiles Nicholson Brain Institute in Jupiter, Florida at no cost to participants.
 
 References
