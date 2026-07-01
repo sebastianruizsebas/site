@@ -6,21 +6,23 @@
 .cv-container {
   max-width: 1000px;
   margin: 0 auto;
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $global-font-family;
   color: var(--global-text-color);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* Header Styles */
 .cv-header {
   margin-bottom: 2rem;
-  border-bottom: 2px solid var(--global-thead-color );
-  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--global-border-color);
+  padding-bottom: 1.25rem;
 }
 
 .cv-header h1 {
   margin-bottom: 0.5rem;
-  color: var(--global-text-color );
+  color: var(--global-text-color);
+  font-size: clamp(1.7rem, calc(1.2rem + 1.8vw), 2.4rem);
+  letter-spacing: -0.02em;
 }
 
 .cv-contact-info {
@@ -28,6 +30,9 @@
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 0.5rem;
+  font-family: $monospace;
+  font-size: $type-size-6;
+  color: var(--global-text-color-light);
 }
 
 .cv-contact-item {
@@ -59,27 +64,39 @@
 
 /* Section Styles */
 .cv-section {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .cv-section h2 {
-  border-bottom: 1px solid var(--global-border-color);
+  border-bottom: 1px dashed var(--global-border-color);
   padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--global-text-color);
+  font-family: $monospace;
+  font-size: $type-size-6;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--global-base-color);
 }
 
 .cv-section h2 i {
-  color: var(--global-text-color);
+  color: var(--global-base-color);
 }
 
 /* Item Styles */
 
 .cv-item {
   margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--global-border-color);
+  transition: $global-transition;
+
+  &:hover {
+    border-left-color: var(--global-base-color);
+  }
 }
 
 .cv-list {
@@ -89,20 +106,27 @@
 .cv-item-header {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 0.5rem;
 }
 
 .cv-item-title {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.1rem;
+  font-family: $header-font-family;
+  letter-spacing: -0.01em;
 }
 
 .cv-item-date {
-  color: var(--global-text-color);
+  color: var(--global-text-color-light);
+  font-family: $monospace;
+  font-size: $type-size-7;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 .cv-item-subtitle {
-  color: var(--global-text-color);
+  color: var(--global-text-color-light);
   margin-bottom: 0.5rem;
 }
 
@@ -142,10 +166,13 @@
 }
 
 .cv-skill-keyword {
-  background-color: var(--global-bg-color);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
+  background-color: var(--global-card-bg-color, var(--global-bg-color));
+  border: 1px solid var(--global-border-color);
+  color: var(--global-text-color);
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-family: $monospace;
+  font-size: 0.8rem;
 }
 
 /* Project Styles */
@@ -157,11 +184,13 @@
 }
 
 .cv-project-keyword {
-  background-color: var(--global-bg-color);
-  color: var(--global-thead-color);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
+  background-color: var(--global-card-bg-color, var(--global-bg-color));
+  border: 1px solid var(--global-border-color);
+  color: var(--global-text-color-light);
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-family: $monospace;
+  font-size: 0.8rem;
 }
 
 /* Languages Styles */
@@ -204,10 +233,12 @@
 }
 
 .cv-interest-keyword {
-  background-color: var(--global-bg-color);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
+  background-color: var(--global-card-bg-color, var(--global-bg-color));
+  border: 1px solid var(--global-border-color);
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-family: $monospace;
+  font-size: 0.8rem;
 }
 
 /* References Styles */

@@ -15,13 +15,13 @@
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: none;
 
       img {
-        box-shadow: 0 0 10px rgba(#000, 0.25);
+        box-shadow: var(--global-glow-shadow, $box-shadow);
       }
     }
   }
@@ -30,9 +30,13 @@
 .archive__subtitle {
   margin: 1.414em 0 0;
   padding-bottom: 0.5em;
-  font-size: $type-size-5;
-  color: var(--global-text-color-light);
-  border-bottom: 1px solid var(--global-border-color);
+  font-family: $monospace;
+  font-size: $type-size-7;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--global-base-color);
+  border-bottom: 1px dashed var(--global-border-color);
 
   + .list__item .archive__item-title {
     margin-top: 0.5em;
@@ -41,7 +45,9 @@
 
 .archive__item-title {
   margin-bottom: 0.25em;
-  font-family: $sans-serif-narrow;
+  font-family: $header-font-family;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 
   a + a {
     opacity: 0.5;
@@ -60,6 +66,7 @@
 .archive__item-excerpt {
   margin-top: 0;
   font-size: $type-size-6;
+  color: var(--global-text-color-light);
 
   & + p {
     text-indent: 0;
@@ -74,14 +81,43 @@
   }
 }
 
+/* panel treatment for list and grid entries */
+.list__item .archive__item,
+.grid__item .archive__item {
+  background: var(--global-card-bg-color, transparent);
+  border: 1px solid var(--global-border-color);
+  border-radius: $border-radius;
+  padding: 1.1em 1.3em;
+  transition: $global-transition;
+
+  .archive__item-title {
+    margin-top: 0 !important;
+  }
+}
+
+.list__item {
+  margin-bottom: 1.25em;
+}
+
 .archive__item:hover {
   .archive__item-teaser {
-    box-shadow: 0 0 10px rgba(#000, 0.25);
+    box-shadow: none;
   }
 
   .archive__item-title {
-    text-decoration: underline;
+    text-decoration: none;
+
+    a {
+      color: var(--global-base-color);
+    }
   }
+}
+
+.list__item .archive__item:hover,
+.grid__item .archive__item:hover {
+  border-color: var(--global-base-color);
+  box-shadow: var(--global-glow-shadow, $box-shadow);
+  transform: translateY(-2px);
 }
 
 
@@ -111,6 +147,11 @@
 /*
    Grid view
    ========================================================================== */
+
+.grid__wrapper {
+  @include clearfix();
+  margin-bottom: 2em;
+}
 
 .grid__item {
   margin-bottom: 2em;
