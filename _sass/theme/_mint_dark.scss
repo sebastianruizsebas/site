@@ -1,30 +1,32 @@
 /* ==========================================================================
    MINT THEME - DARK VERSION
+   "basement" — near-black with a green cast, dim phosphor accents
    ========================================================================== */
 /* Color codes used for the theme */
-$primary-color              : #30e3ca;
-$background                 : #1a2421;
-$background-light           : #243430;
-$background-lighter        : #2e443f;
-$text                      : #e8f5f3;
-$text-muted                : #b8d5d1;
-$link                      : #4effd9;
-$link-dark                 : #7cffdf;
-$link-light                : #2bd4bd;
-$footer                    : #0f1614;
-$border                    : #2e443f;
-$border-light              : #3d5950;
+$primary-color              : #3fd0b3;
+$background                 : #0f1312;
+$background-light           : #161c1a;
+$background-lighter        : #1e2522;
+$text                      : #d7e0db;
+$text-muted                : #8da09a;
+$link                      : #46d3b6;
+$link-dark                 : #6fe3c9;
+$link-light                : #35b89d;
+$footer                    : #0a0d0c;
+$border                    : #232c29;
+$border-light              : #303b36;
 
 /* Color codes used for the site */
 $danger-color               : #e74c3c;
-$info-color                 : #4effd9;
+$info-color                 : #46d3b6;
 $notice-color               : #30e3ca;
 $success-color              : #2ecc71;
 $warning-color              : #f39c12;
 
 /* Other basic settings for the template */
-$border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
+/* NOTE: these SCSS vars compile last, so they serve BOTH light and dark modes */
+$border-radius              : 6px;
+$box-shadow                 : 0 1px 2px rgba(10, 15, 14, 0.12), 0 10px 30px -18px rgba(10, 15, 14, 0.4);
 $global-transition          : all 0.2s ease-in-out;
 $masthead-height            : 70px;
 $navicon-width              : 28px;
@@ -51,11 +53,21 @@ html[data-theme="dark"] {
   --global-text-color-light           : #{$text-muted};
   --global-thead-color                : #{$background-lighter};
 
+  /* extended tokens */
+  --global-card-bg-color              : #{$background-light};
+  --global-accent-soft-color          : rgba(63, 208, 179, 0.14);
+  --global-footer-text-color          : #7d8d87;
+  --global-glow-shadow                : 0 0 0 1px rgba(63, 208, 179, 0.25), 0 6px 32px -10px rgba(63, 208, 179, 0.28);
+  --global-grain-opacity              : 0.06;
 }
 
 /* Footer styling for dark mode */
 html[data-theme="dark"] {
   footer {
-    color: #{$text};
+    color: #7d8d87;
+  }
+
+  .btn {
+    color: #0c1210 !important;
   }
 }
