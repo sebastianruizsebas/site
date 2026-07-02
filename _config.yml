@@ -23,7 +23,7 @@ repository               : "sebastianruizsebas/site"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.jpg"
+  avatar           : "profile.png"
   name             : "Sebastian Ruiz"
   pronouns         : "He/him" # example: "she/her"  
   bio              : "Interested in computational modeling methods applied to neuroscience, AI, and psychiatry."
