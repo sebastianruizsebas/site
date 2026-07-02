@@ -19,13 +19,11 @@ My journey into computational neuroscience began during a summer internship at C
 
 In 2025 I did a Leadership Alliance summer internship in computational brain science at Brown University in 2025 working under the mentorship of Mohamed Sherif M.D., Ph.D., and Santiago Enriquez M.Eng., where I familiarized myself with the Thousand Brains Project's [Monty Sensorimotor Learning System](https://thousandbrainsproject.readme.io/docs/welcome-to-the-thousand-brains-project-documentation). I am currently contiuning my work on Monty and perhaps will be until I graduate in Spring 2027, because it is relevant to my interests in computational psychiatry and computational modeling.
 
-This summer 2026 I  am a Cech Fellow working in the Lab of Dr. Srinivas Turaga and with Dr. Gert-Jan Both.
+This summer 2026 I  am a Cech Fellow working in the Lab of Dr. Srinivas Turaga and with Dr. Gert-Jan Both working on using Reinforcement Learning to make an embodied neuroAI model of a fly behave more realistically.
 
 I founded CompNeuroSociety at FSU in Spring 2025 out of a desire to build a community around computational neuroscience at my current institution, and to open an avenue to keep developing my skills in my preferred field of study while taking classes at FSU. I applied to and was awarded the [Open Research Community Accelerator - Cataltyic Awards Program Grant](https://www.orcaopen.org/work/cap/#About-the-Program) for $14,550 to support our collaborative research project being mentored by Assistant Professor of Biological Sciences Rodrigo Pena, Ph.D., Postdoc Juan Lopez, Ph.D., and Ph.D. Candidate Ty Roachford (Stiles Nicholson Brain Institute, Florida Atlantic University) and in collaboration with a sister branch of CompNeuroSociety founded Spring 2026 led by Ethan Johnson (Florida International University)
 
 Talk/Poster Map
 ------ 
 [Check out places I've been](https://www.sebasruiz.site/talkmap.html)
-
-
 <iframe src="https://www.sebasruiz.site/talks/talkmap/map.html" height="700" width="850" style="border:none;"></iframe>
