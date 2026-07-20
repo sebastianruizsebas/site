@@ -8,12 +8,6 @@ tags:
 excerpt: "The fish drifting behind this site follow three local rules and nobody is in charge. That same idea, behavior with no central controller, is a real way to think about brains, and about the flies I work on."
 ---
 
-<!-- DRAFT (Claude-assisted, grounded in a verified-citation research pass, aimed at your voice).
-     Hedges kept on purpose: the separation/alignment/cohesion names are Reynolds' 1999 terms not
-     1987; boids is an animation model, not a measurement of real fish; Thousand Brains and the
-     collective-cognition link stay as analogy. The fly paragraph is written from your own
-     experience with no citations attached, since the sourced papers are about fish. Refs at the bottom. -->
-
 If you move your cursor around this site, the school of fish drifting in the background scatters away from it and regroups once you hold still. Here is how that works, because the mechanism is simpler than it looks, and it lines up with how I think about brains.
 
 The fish are a "boids" simulation, the one Craig Reynolds published in 1987. Each fish follows three rules, and each rule only looks at its nearby neighbors:

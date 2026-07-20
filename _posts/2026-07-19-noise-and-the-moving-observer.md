@@ -9,11 +9,6 @@ tags:
 excerpt: "Perception is a decision made under noise. You can weight your cues and lean on good priors, but the other way to deal with noise is to move. Some notes on precision, psychiatry, and what I do to Monty."
 ---
 
-<!-- DRAFT (Claude-assisted, grounded in a verified-citation research pass, aimed at your voice).
-     Science is hedged on purpose: "the brain is Bayesian" is a hypothesis, precision is not
-     literally input noise, the psychiatry is framed as contested computational models. Keep what
-     rings true and put the Monty paragraph in your own words since it's your work. Refs at the bottom. -->
-
 We usually talk about perception like it is reading the world off a screen. Light comes in, the picture shows up. But the signal your senses deliver can be noisy: how do you know what you're perceiving is the truth? The brain still has to commit to some account of what is out there. That commitment, made under noise, is the problem I think cognition is mostly solving.
 
 Signal detection theory describes it. When you decide whether you heard a faint sound, your performance separates into two things: how well your senses pull apart the "nothing there" case from the "something there" case, and where you set the line between them. So a "threshold" works as a decision boundary you can move, set by what you expect and by what a miss or a false alarm costs you (Green & Swets, 1966).
