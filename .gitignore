@@ -16,6 +16,9 @@ package-lock.json
 /vendor/
 .bundle/
 
+# Ignore the Python virtualenv used for image tooling
+.venv/
+
 # Ignore folders related to IDEs
 .vscode/
 
