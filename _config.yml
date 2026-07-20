@@ -8,11 +8,11 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
+site_theme               : "mint" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "Personal Website"
 title_separator          : "-"
 name                     : &name "Sebas Ruiz"
-description              : &description "Sebas Ruiz's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Sebas Ruiz's academic website"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://www.sebasruiz.site # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,8 +26,8 @@ author:
   avatar           : "profile.png"
   name             : "Sebastian Ruiz"
   pronouns         : "He/him" # example: "she/her"  
-  bio              : "Interested in computational modeling methods applied to neuroscience and psychiatry."
-  location         : "Florida, USA (unfortunately)"
+  bio              : "Interested in computational modeling methods applied to neuroscience, AI, and psychiatry."
+  location         : "Florida, USA"
   employer         : "Florida State University"
   uri              : # URL
   email            : "sr23bt@fsu.edu" 
@@ -95,7 +95,7 @@ publication_category:
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
-future                   : true
+future                   : false
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:

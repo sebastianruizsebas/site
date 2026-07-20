@@ -383,7 +383,28 @@ def create_cv_json(md_file, config_file, repo_root, output_file):
         "skills": parse_skills(sections.get('Skills', '')),
         "languages": [],
         "interests": [],
-        "references": []
+        "references": [
+            {
+            "name": "Timothy Verstynen, Ph.D.",
+            "email": "timothyv@andrew.cmu.edu"
+            },
+            {
+            "name": "Mohamed Sherif, M.D., Ph.D.",
+            "email": "mohamed_sherif@brown.edu"
+            },
+            {
+            "name": "Carmen Varela, Ph.D.",
+            "email": "c.varela@fsu.edu"
+            },
+            {
+            "name": "Jack Burgess, Ph.D.",
+            "email": ""
+            },
+            {
+            "name": "Katherine Freeman-Costin, Ph.D.",
+            "email": "kfreemancostin@health.fau.edu"
+            }
+        ]
     }
     
     # Add publications

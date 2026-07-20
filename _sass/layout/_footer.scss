@@ -5,7 +5,7 @@
 .page__footer {
   @include clearfix;
   background-color: var(--global-footer-bg-color);
-  color: var(--global-text-color-light);
+  color: var(--global-footer-text-color, var(--global-text-color-light));
 
   float: left;
   margin-left: 0;
@@ -25,15 +25,16 @@
           animation: intro 0.3s both;
   -webkit-animation-delay: 0.45s;
           animation-delay: 0.45s;
-  border-top: 1px solid var(--global-dark-border-color);
+  border-top: 1px solid var(--global-base-color);
 
   footer {
     @include clearfix;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1em;
+    margin-top: 1.5em;
     max-width: 100%;
-    padding: 0 1em 1em;
+    padding: 0 1em 1.5em;
+    font-family: $monospace;
 
     @include breakpoint($x-large) {
       max-width: $x-large;
@@ -45,7 +46,8 @@
     text-decoration: none;
 
     &:hover {
-      text-decoration: underline;
+      color: var(--global-base-color);
+      text-decoration: none;
     }
   }
 
@@ -53,13 +55,15 @@
   .fab,
   .far,
   .fal {
-    color: var(--global-text-color-light);
+    color: var(--global-footer-text-color, var(--global-text-color-light));
   }
 }
 
 .page__footer-copyright {
-  font-family: $global-font-family;
+  font-family: $monospace;
   font-size: $type-size-7;
+  letter-spacing: 0.03em;
+  opacity: 0.75;
 }
 
 .page__footer-follow {
@@ -73,9 +77,10 @@
     display: inline-block;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-family: $sans-serif-narrow;
-    font-size: $type-size-6;
+    font-family: $monospace;
+    font-size: $type-size-7;
     text-transform: uppercase;
+    letter-spacing: 0.12em;
   }
 
   li + li:before {
@@ -85,7 +90,7 @@
 
   a {
     padding-right: 10px;
-    font-weight: bold;
+    font-weight: 500;
   }
 
   .social-icons {
