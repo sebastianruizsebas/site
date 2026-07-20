@@ -1,0 +1,38 @@
+---
+layout: zen
+permalink: /
+title: "Sebas Ruiz"
+excerpt: "I study the brain's own models of the world — through statistics, computational neuroscience, and a founder's patience for building community (CompNeuroSociety, FSU)."
+zen_hero: true
+redirect_from:
+  - /about/
+  - /about.html
+---
+
+{% include base_path %}
+
+<div class="zen-content zen-content--home">
+  <div class="zen-hero-top">
+    <img class="zen-portrait" src="{{ base_path }}/images/profile.png" alt="Portrait of Sebastian Ruiz">
+    <div class="zen-tagline">Light finds its own way through.</div>
+  </div>
+  <h1 class="zen-hero-title">SEBAS</h1>
+  <p class="zen-intro">I study the brain's own models of the world — through statistics, computational neuroscience, and a founder's patience for building community (CompNeuroSociety, FSU).</p>
+  <div class="zen-chips">
+    <span>He/Him</span><span class="zen-dot">·</span><span>Tallahassee, FL</span><span class="zen-dot">·</span><span>FSU</span>
+  </div>
+
+  <div class="zen-section">
+    <h2 class="zen-label">Field Notes</h2>
+    {% if site.posts.size > 0 %}
+      {% for post in site.posts limit: 5 %}
+        <div class="zen-li">
+          <a class="zen-li-title" href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+          <span class="zen-meta">{% if post.tags.first %}{{ post.tags.first }} · {% endif %}{{ post.date | date: "%b %Y" }}</span>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="zen-note" style="font-size:15px;padding:13px 0">Field notes are on their way — nothing posted just yet.</p>
+    {% endif %}
+  </div>
+</div>

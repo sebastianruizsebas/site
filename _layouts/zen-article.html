@@ -1,0 +1,34 @@
+---
+layout: zen
+---
+
+{% include base_path %}
+
+{% case page.collection %}
+  {% when 'talks' %}{% assign back_url = '/talks/' %}{% assign back_label = 'Talks' %}
+  {% when 'portfolio' %}{% assign back_url = '/portfolio/' %}{% assign back_label = 'Portfolio' %}
+  {% when 'publications' %}{% assign back_url = '/publications/' %}{% assign back_label = 'Publications' %}
+  {% when 'teaching' %}{% assign back_url = '/teaching/' %}{% assign back_label = 'Teaching' %}
+  {% else %}{% assign back_url = '/year-archive/' %}{% assign back_label = 'Field Notes' %}
+{% endcase %}
+
+<div class="zen-content zen-content--narrow zen-prose">
+  <a class="zen-back" href="{{ base_path }}{{ back_url }}">← {{ back_label }}</a>
+  <h1 class="zen-h1">{{ page.title }}</h1>
+  <div class="zen-article-meta">
+    {% if page.venue %}<span>{{ page.venue }}</span>{% endif %}
+    {% if page.location %}<span class="zen-dot">·</span><span>{{ page.location | replace: ", USA", "" }}</span>{% endif %}
+    {% if page.date %}<span class="zen-dot">·</span><span>{{ page.date | date: "%b %-d, %Y" }}</span>{% endif %}
+  </div>
+  <div class="zen-bar"></div>
+
+  {% if page.tags.size > 0 %}
+    <div class="zen-tags">
+      {% for tag in page.tags %}<span class="zen-tag">{{ tag }}</span>{% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="zen-prose-body">
+    {{ content }}
+  </div>
+</div>

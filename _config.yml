@@ -192,6 +192,9 @@ exclude:
   - README
   - tmp
   - vendor
+  - export
+  - "Artsy Bold Zen Design"
+  - "Artsy Bold Zen Design.zip"
 keep_files:
   - .git
   - .svn
@@ -242,12 +245,8 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
+      layout: zen-article
       read_time: true
-      comments: true
-      share: true
-      related: true
   # _pages
   - scope:
       path: ""
@@ -260,36 +259,25 @@ defaults:
       path: ""
       type: teaching
     values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
+      layout: zen-article
   # _publications
   - scope:
       path: ""
       type: publications
     values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
+      layout: zen-article
   # _portfolio
   - scope:
       path: ""
       type: portfolio
     values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
+      layout: zen-article
   # _talks
   - scope:
       path: ""
       type: talks
     values:
-      layout: talk
-      author_profile: true
-      share: true
+      layout: zen-article
 
 
 # Sass/SCSS

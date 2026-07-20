@@ -1,36 +1,34 @@
 ---
-layout: archive
+layout: zen
 title: "Publications"
 permalink: /publications/
-author_profile: true
 ---
-
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
+<div class="zen-content zen-content--narrow">
+  <h1 class="zen-h1 zen-h1--lg">Publications</h1>
+  <div class="zen-bar" style="margin-bottom:28px"></div>
+  {% if site.publications.size > 0 %}
+    {% for category in site.publication_category %}
+      {% assign title_shown = false %}
+      {% for post in site.publications reversed %}
+        {% if post.category != category[0] %}{% continue %}{% endif %}
+        {% unless title_shown %}
+          <h2 class="zen-label" style="margin-top:24px">{{ category[1].title }}</h2>
+          {% assign title_shown = true %}
+        {% endunless %}
+        <div class="zen-li zen-li--talk">
+          <div class="zen-li-main">
+            <div class="zen-talk-title"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></div>
+            {% if post.venue %}<div class="zen-talk-venue">{{ post.venue }}</div>{% endif %}
+            {% if post.excerpt %}<div class="zen-talk-desc">{{ post.excerpt | strip_html | strip }}</div>{% endif %}
+          </div>
+          <span class="zen-meta">{{ post.date | date: "%b %Y" }}</span>
+        </div>
+      {% endfor %}
     {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
-
-
-
+  {% else %}
+    <p class="zen-note">Nothing published yet — the ideas are still fermenting.</p>
+  {% endif %}
+</div>

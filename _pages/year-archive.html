@@ -1,19 +1,24 @@
 ---
-layout: archive
+layout: zen
 permalink: /year-archive/
-title: "Blog posts"
-author_profile: true
+title: "Field Notes"
 redirect_from:
   - /wordpress/blog-posts/
 ---
 
 {% include base_path %}
-{% capture written_year %}'None'{% endcapture %}
-{% for post in site.posts %}
-  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-  {% if year != written_year %}
-    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
-    {% capture written_year %}{{ year }}{% endcapture %}
+
+<div class="zen-content zen-content--narrow">
+  <h1 class="zen-h1">Field Notes</h1>
+  <div class="zen-bar"></div>
+  {% if site.posts.size > 0 %}
+    {% for post in site.posts %}
+      <div class="zen-li">
+        <a class="zen-li-title" href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+        <span class="zen-meta">{% if post.tags.first %}{{ post.tags.first }} · {% endif %}{{ post.date | date: "%b %Y" }}</span>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="zen-note">Field notes are on their way — nothing posted just yet.</p>
   {% endif %}
-  {% include archive-single.html %}
-{% endfor %}
+</div>

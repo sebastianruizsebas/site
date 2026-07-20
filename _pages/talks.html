@@ -1,16 +1,26 @@
 ---
-layout: archive
-title: "Talks and presentations"
+layout: zen
+title: "Talks"
 permalink: /talks/
-author_profile: true
 ---
 
-{% if site.talkmap_link == true %}
+{% include base_path %}
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
-
-{% endif %}
-
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
-{% endfor %}
+<div class="zen-content zen-content--narrow">
+  <h1 class="zen-h1">Talks</h1>
+  <div class="zen-bar"></div>
+  {% if site.talks.size > 0 %}
+    {% for post in site.talks reversed %}
+      <div class="zen-li zen-li--talk">
+        <div class="zen-li-main">
+          <div class="zen-talk-title"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></div>
+          <div class="zen-talk-venue">{{ post.venue }}{% if post.location %} · {{ post.location | replace: ", USA", "" }}{% endif %}</div>
+          <div class="zen-talk-desc">{{ post.excerpt | strip_html | strip }}</div>
+        </div>
+        <span class="zen-meta">{{ post.date | date: "%b %Y" }}</span>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="zen-note">Nothing to show yet.</p>
+  {% endif %}
+</div>

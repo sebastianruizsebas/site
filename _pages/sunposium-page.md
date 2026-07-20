@@ -1,7 +1,7 @@
 ---
+layout: zen-page
 permalink: /sunposium-ref/
 title: "2026 Sunposium Poster"
-author_profile: true
 redirect_from: 
   - "/sunposium/"
   - "/sunposium.html"

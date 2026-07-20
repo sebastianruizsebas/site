@@ -1,12 +1,26 @@
 ---
-layout: archive
+layout: zen
 title: "Teaching"
 permalink: /teaching/
-author_profile: true
 ---
 
 {% include base_path %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<div class="zen-content zen-content--narrow">
+  <h1 class="zen-h1 zen-h1--lg">Teaching</h1>
+  <div class="zen-bar" style="margin-bottom:28px"></div>
+  {% if site.teaching.size > 0 %}
+    {% for post in site.teaching reversed %}
+      <div class="zen-li zen-li--talk">
+        <div class="zen-li-main">
+          <div class="zen-talk-title">{{ post.title }}</div>
+          {% if post.venue %}<div class="zen-talk-venue">{{ post.venue }}{% if post.location %} · {{ post.location | replace: ", USA", "" }}{% endif %}</div>{% endif %}
+          <div class="zen-talk-desc">{{ post.excerpt | strip_html | strip }}</div>
+        </div>
+        <span class="zen-meta">{{ post.date | date: "%b %Y" }}</span>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="zen-note">Nothing to show yet.</p>
+  {% endif %}
+</div>

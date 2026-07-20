@@ -1,15 +1,28 @@
 ---
-layout: archive
+layout: zen
 title: "Portfolio"
 permalink: /portfolio/
-author_profile: true
 ---
 
 {% include base_path %}
 
-<div class="grid__wrapper">
-  {% for post in site.portfolio %}
-    {% include archive-single.html type="grid" %}
-  {% endfor %}
+<div class="zen-content zen-content--wide">
+  <h1 class="zen-h1">Portfolio</h1>
+  <div class="zen-bar"></div>
+  {% if site.portfolio.size > 0 %}
+    <div class="zen-grid">
+      {% for post in site.portfolio reversed %}
+        <div class="zen-card">
+          <a href="{{ base_path }}{{ post.url }}">
+            {% if post.image %}<img src="{{ base_path }}{{ post.image }}" alt="{{ post.title }}{% if post.venue %} at {{ post.venue }}{% endif %}">{% endif %}
+            <div class="zen-card-title">{{ post.title }}</div>
+          </a>
+          <div class="zen-card-meta">{{ post.date | date: "%b %Y" }}{% if post.location %} · {{ post.location | replace: ", USA", "" }}{% endif %}</div>
+          <div class="zen-card-desc">{{ post.excerpt | strip_html | strip }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="zen-note">Nothing to show yet.</p>
+  {% endif %}
 </div>
-

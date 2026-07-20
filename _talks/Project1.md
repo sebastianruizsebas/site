@@ -10,4 +10,4 @@ location: "Tallahassee, FL, USA"
 
 Led weekly Project Meetings for the ORCA-funded CompNeuro-CREP Accelerator project focused on replicating a previously published model of the fly escape response.
 
-![Project Meeting 3 Participants](../images/project1.jpg)
+![Project Meeting 3 Participants](/images/project1.jpg)
