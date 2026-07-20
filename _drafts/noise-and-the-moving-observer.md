@@ -5,14 +5,16 @@ tags:
   - active inference
   - Monty
   - Thousand Brains Theory
+  - computational psychiatry
   - notes
-excerpt: "Perception is a decision made under noise. You can weight your cues and lean on good priors, but the other way to deal with noise is to move. Some notes on precision, psychiatry, and what I do to Monty."
+excerpt: "Perception is a decision made under noise, and precision is the knob the brain turns to deal with it. Notes on that knob, on reading some psychiatric differences through it, and on my honors thesis: making active inference testable by computing it inside Monty."
 ---
 
-<!-- DRAFT (Claude-assisted, grounded in a verified-citation research pass, aimed at your voice).
-     Science is hedged on purpose: "the brain is Bayesian" is a hypothesis, precision is not
-     literally input noise, the psychiatry is framed as contested computational models. Keep what
-     rings true and put the Monty paragraph in your own words since it's your work. Refs at the bottom. -->
+<!-- DRAFT (Claude-assisted). The front half (noise -> precision -> psychiatry -> embodiment)
+     is unchanged; the back half now folds in your honors-thesis plan (making active inference
+     falsifiable in Monty) and the fit-to-data / computational-psychiatry direction from your
+     personal statement. I kept the personal medical detail OUT of the public text; an optional,
+     compact version is flagged inline below. Put the Monty specifics in your own words. -->
 
 We usually talk about perception like it is reading the world off a screen. Light comes in, the picture shows up. But the signal your senses deliver can be noisy: how do you know what you're perceiving is the truth? The brain still has to commit to some account of what is out there. That commitment, made under noise, is the problem I think cognition is mostly solving.
 
@@ -36,11 +38,22 @@ O'Regan and Noë (2001) described seeing as an activity, where what you experien
 
 The experiment I keep in mind is from 1963 (Held & Hein). Two kittens get nearly the same visual input through an apparatus, but one walks and steers while the other is carried along the same path. Only the kitten producing its own movement develops normal vision; the carried one, with matched input, does not. It is a small, old study that has since been reinterpreted, so I hold it loosely. The carried kitten does not learn to see.
 
-This connects to what I do. The Thousand Brains framework holds that the cortex learns objects by moving over them. Each cortical column pairs a sensed feature with a location on the object and builds a model from those feature-and-location pairs as the sensor moves (Hawkins et al., 2019), with roughly one algorithm repeated across the cortex, which is an older idea of Vernon Mountcastle's. Monty is the first implementation of it, a set of repeating sensorimotor modules that sense and act (Clay, Leadholm & Hawkins, 2024).
+This connects to what I do. The Thousand Brains framework holds that the cortex learns objects by moving over them. Each cortical column pairs a sensed feature with a location on the object and builds a model from those feature-and-location pairs as the sensor moves (Hawkins et al., 2019), with roughly one algorithm repeated across the cortex, an older idea of Vernon Mountcastle's. Monty is the first implementation of it, a set of repeating sensorimotor modules that sense and act (Clay, Leadholm & Hawkins, 2024). To recognize an object it keeps a running "evidence" score for each guess and updates it as the sensor moves. That score is a heuristic and is never normalized into a probability. On clearly different objects it works fast, around 28 touches; on similar objects with sensor noise it can take closer to 170. That slowdown is the weak spot I care about, and noise is the lever.
 
-I degrade the sensory signal-to-noise in Monty and watch what happens. That is the same knob from earlier: lowering the precision of the senses on an observer that can move, and asking whether movement resolves the object anyway. The clinical accounts turn that knob and can mostly only observe. In a model I can turn it on something that moves, and check whether action recovers what the noise removed.
+My honors thesis uses that setup to take a shot at active inference. Active inference is one of the broad normative accounts of the brain: perception and action both fall out of one principle, reducing surprise. It is influential and also criticized as hard to test, because stated loosely it can seem to explain almost any behavior after the fact. The thesis takes that criticism at face value. Monty is already most of the way to an active-inference agent, and the missing piece is naming one probability, the likelihood, which is really just its stored 3D model read as "if this guess is right, what should I expect to sense here?" Once that is named, belief, precision, and free energy stop being metaphors and become numbers I can compute, and once they are numbers the predictions can be checked and possibly broken. I set it up so a negative result is still useful: either the active-inference reading of Monty earns some real support, or I map where it breaks on a concrete system.
 
-I do not have a clean result yet, and I am wary of how tidy this reads once it is lined up in one essay. Monty is an early prototype, the Bayesian-brain account is a hypothesis, and "add noise to the input" is a crude version of precision. The question still seems worth asking in this form: what a receiver can do about a noisy signal by moving through the world.
+The one change under all of this is small. Monty's matching tolerance, how close a sensed feature has to be to count as a match, is a fixed number the author chose. I treat it as precision and let the system estimate it from its own experience. That single move turns the stored model into a real probability distribution and shifts Monty a measurable step, from a hand-built heuristic toward something fit to data. I like it as a way to work: rather than argue about whether brain models should be normative, mechanistic, or fit to recordings, I take one transparent heuristic system and measure how far it sits from the ideal.
+
+This is where the psychiatry from earlier comes back. Precision is the knob computational psychiatry reaches for first, especially in the precision-based account of psychosis (Adams et al., 2013), and the field works in two styles: fitting models to clinical data, and building a mechanism and asking what breakage reproduces a symptom (Huys, Maia & Frank, 2016). My work is the second kind. In a model this transparent I can miscalibrate precision on purpose, over- or under-trusting the senses, and watch whether behavior degrades in the direction the theory predicts. I want to be careful about scope. Monty recognizes objects and is not a model of hallucination, delusion, or the sense of agency, which is where those accounts actually live. The most a positive result shows is that the precision mechanism moves with the sign the theory predicts, in a system where I can trace every step from the miscalibration to the behavior.
+
+<!-- OPTIONAL personal thread (from your personal statement, omitted here for privacy):
+     you could ground the "why" below in navigating care for a neurological condition, and
+     how a precise, mechanistic account of a disorder can change a person's life. Add only
+     if you want that public. -->
+
+The longer direction is to push models like this toward the data-constrained end, close enough to real measurements to say something true about mental illness: fit the parameters, perturb them, and read them out at both the neural and behavioral level. That end already exists in pieces, like connectome-constrained models of the fly visual system (Lappalainen et al., 2024), or patient-specific "digital twin" brain models used to plan epilepsy treatment (Jirsa et al., 2017). Monty is nowhere near either, and turning one hand-set number into an estimated one is only the first rung. I care about the direction because most psychiatric diagnosis still leans on description more than on computation, and closing that gap is the work I want to do.
+
+I do not have a clean result yet, and I am wary of how tidy this reads once it is lined up in one essay. Monty is an early prototype, the Bayesian-brain account is a hypothesis, and "add noise to the input" is a crude stand-in for precision. The reason I keep at it is that the same knob keeps showing up, in cue integration, in attention, in the clinical accounts, and finally in one system I can take apart and move. What a receiver can do about a noisy signal by moving through the world is a question I can now actually run.
 
 ---
 
@@ -63,3 +76,6 @@ I do not have a clean result yet, and I am wary of how tidy this reads once it i
 - Held, R., & Hein, A. (1963). Movement-produced stimulation in the development of visually guided behavior. *J. Comparative and Physiological Psychology*, 56(5), 872–876.
 - Hawkins, J., et al. (2019). A framework for intelligence and cortical function based on grid cells in the neocortex. *Frontiers in Neural Circuits*, 12, 121.
 - Clay, V., Leadholm, N., & Hawkins, J. (2024). The Thousand Brains Project. arXiv:2412.18354. [arxiv](https://arxiv.org/abs/2412.18354)
+- Huys, Q. J. M., Maia, T. V., & Frank, M. J. (2016). Computational psychiatry as a bridge from neuroscience to clinical applications. *Nature Neuroscience*, 19(3), 404–413.
+- Lappalainen, J. K., et al. (2024). Connectome-constrained networks predict neural activity across the fly visual system. *Nature*, 634. [doi](https://doi.org/10.1038/s41586-024-07939-3)
+- Jirsa, V. K., et al. (2017). The Virtual Epileptic Patient: individualized whole-brain models of epilepsy spread. *NeuroImage*, 145, 377–388. [doi](https://doi.org/10.1016/j.neuroimage.2016.04.049)
