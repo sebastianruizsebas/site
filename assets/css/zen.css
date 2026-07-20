@@ -361,6 +361,22 @@ html[data-theme="dark"] .zen-meta { color: var(--zen-faint); }
 .zen-prose-body hr { border: 0; border-top: 1px solid var(--zen-line); margin: 28px 0; }
 .zen-prose-body iframe { max-width: 100%; margin: 12px 0; }
 
+/* Figures + Mermaid diagrams */
+.zen-figure { margin: 30px 0; }
+.zen-figure figcaption {
+  margin-top: 12px;
+  font: italic 400 13px/1.6 'IBM Plex Serif', serif;
+  color: var(--zen-muted);
+}
+/* Override the code-block look for mermaid, and hide the raw source until
+   mermaid swaps in the SVG (data-processed is set on render). */
+.zen-prose-body pre.mermaid {
+  background: none; padding: 0; border: 0; overflow: visible;
+  text-align: center; font: inherit;
+}
+pre.mermaid:not([data-processed]) { visibility: hidden; }
+.mermaid svg { max-width: 100%; height: auto; }
+
 /* ── Footer ── */
 .zen-footer {
   padding: 24px clamp(20px, 4vw, 40px);

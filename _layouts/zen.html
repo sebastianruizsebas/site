@@ -106,5 +106,6 @@ layout: compress
       })();
     </script>
     <script src="{{ base_path }}/assets/js/zen-fish.js" defer></script>
+    {% if page.mermaid %}<script type="module" src="{{ base_path }}/assets/js/zen-mermaid.js"></script>{% endif %}
   </body>
 </html>
