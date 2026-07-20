@@ -137,6 +137,7 @@ exclude:
   - .bundle
   - .github
   - .devcontainer
+  - "Artsy Bold Zen Design"
   - Dockerfile
   - docker-compose.yaml
   - Gemfile

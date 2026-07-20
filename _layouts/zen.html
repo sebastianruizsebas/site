@@ -33,6 +33,17 @@ layout: compress
 
   <body class="zen">
     <a class="zen-skip" href="#main">Skip to content</a>
+
+    <div class="zen-bg" aria-hidden="true">
+      <img class="zen-water" data-src="{{ base_path }}/images/water.gif" alt="">
+      <noscript><img class="zen-water" src="{{ base_path }}/images/water.gif" alt=""></noscript>
+      <div class="zen-blob zen-blob--1"></div>
+      <div class="zen-blob zen-blob--2"></div>
+      <div class="zen-blob zen-blob--3"></div>
+      <div class="zen-tint"></div>
+    </div>
+    <canvas class="zen-fish" aria-hidden="true"></canvas>
+
     <nav class="zen-nav">
       <a class="zen-brand" href="{{ base_path }}/">Sebas</a>
       <div class="zen-nav-links">
@@ -49,28 +60,6 @@ layout: compress
     </nav>
 
     <div class="zen-stage">
-      {% if page.zen_hero %}
-        <div class="zen-bg zen-bg--light" aria-hidden="true">
-          <img class="zen-water" data-src="{{ base_path }}/images/water.gif" alt="">
-          <noscript><img class="zen-water" src="{{ base_path }}/images/water.gif" alt=""></noscript>
-          <div class="zen-blob zen-blob--1"></div>
-          <div class="zen-blob zen-blob--2"></div>
-          <div class="zen-blob zen-blob--3"></div>
-          <div class="zen-tint"></div>
-        </div>
-        <svg class="zen-bg zen-bg--dark" viewBox="0 0 700 700" preserveAspectRatio="none" aria-hidden="true">
-          <g class="zen-stars-drift">
-            <g class="zen-stars-bucket" data-zen-stars="0"></g>
-            <g class="zen-stars-bucket" style="animation-delay:1.3s" data-zen-stars="1"></g>
-            <g class="zen-stars-bucket" style="animation-delay:2.6s" data-zen-stars="2"></g>
-            <g class="zen-stars-bucket" style="animation-delay:3.9s" data-zen-stars="3"></g>
-            <circle class="zen-star-big" cx="120" cy="90" r="2.2"></circle>
-            <circle class="zen-star-big" cx="610" cy="140" r="2" style="animation-duration:6.2s;animation-delay:.8s"></circle>
-            <circle class="zen-star-big" cx="260" cy="330" r="2" style="animation-duration:5.8s;animation-delay:2.1s"></circle>
-            <circle class="zen-star-big" cx="480" cy="500" r="2.2" style="animation-duration:6.6s;animation-delay:1.4s"></circle>
-          </g>
-        </svg>
-      {% endif %}
       <main id="main" class="zen-body" tabindex="-1">
         <div class="zen-rail" aria-hidden="true"><span>Statistics · Computational Neuroscience · FSU</span></div>
         {{ content }}
@@ -86,15 +75,13 @@ layout: compress
       (function () {
         var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
 
-        /* The water gif is heavy and animated — only load it in light theme,
-           and never under prefers-reduced-motion (skips motion and the fetch). */
-        function loadWater() {
-          if (reduceMotion && reduceMotion.matches) return;
-          if (document.documentElement.getAttribute("data-theme") === "dark") return;
-          var img = document.querySelector(".zen-water[data-src]");
-          if (img) { img.src = img.getAttribute("data-src"); img.removeAttribute("data-src"); }
+        /* The water gif is animated and heavy — skip it under prefers-reduced-motion
+           (the CSS also hides it there; skipping the fetch saves the download). */
+        var water = document.querySelector(".zen-water[data-src]");
+        if (water && !(reduceMotion && reduceMotion.matches)) {
+          water.src = water.getAttribute("data-src");
+          water.removeAttribute("data-src");
         }
-        loadWater();
 
         var toggle = document.querySelector(".zen-toggle");
         function reflectTheme() {
@@ -109,33 +96,10 @@ layout: compress
             else document.documentElement.setAttribute("data-theme", "dark");
             localStorage.setItem("theme", dark ? "light" : "dark");
             reflectTheme();
-            loadWater();
           });
-        }
-
-        /* Seeded starfield (same generator + seed as the design prototype). */
-        function seedRandom(seed) {
-          var s = seed >>> 0;
-          return function () {
-            s = (s + 0x6D2B79F5) | 0;
-            var t = Math.imul(s ^ (s >>> 15), 1 | s);
-            t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-            return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-          };
-        }
-        var groups = document.querySelectorAll("[data-zen-stars]");
-        if (groups.length) {
-          var rand = seedRandom(555);
-          var svgNS = "http://www.w3.org/2000/svg";
-          for (var i = 0; i < 60; i++) {
-            var c = document.createElementNS(svgNS, "circle");
-            c.setAttribute("cx", (rand() * 700).toFixed(1));
-            c.setAttribute("cy", (rand() * 700).toFixed(1));
-            c.setAttribute("r", "1.4");
-            groups[i % 4].appendChild(c);
-          }
         }
       })();
     </script>
+    <script src="{{ base_path }}/assets/js/zen-fish.js" defer></script>
   </body>
 </html>

@@ -3,7 +3,6 @@ layout: zen
 permalink: /
 title: "Sebas Ruiz"
 excerpt: "I study the brain's own models of the world — through statistics, computational neuroscience, and a founder's patience for building community (CompNeuroSociety, FSU)."
-zen_hero: true
 redirect_from:
   - /about/
   - /about.html
@@ -32,7 +31,14 @@ redirect_from:
         </div>
       {% endfor %}
     {% else %}
-      <p class="zen-note" style="font-size:15px;padding:13px 0">Field notes are on their way — nothing posted just yet.</p>
+      {% comment %} Curated list from the design handoff (posts live in the
+          author's other blog repo for now). Once posts land in _posts/, the
+          dynamic branch above takes over automatically. {% endcomment %}
+      <div class="zen-li"><span class="zen-li-title">Monty Progress Update / Research Updates</span><span class="zen-meta">Research · Sep 2025</span></div>
+      <div class="zen-li"><span class="zen-li-title">Hole 2021 Paper (Monty)</span><span class="zen-meta">Notes · Jun 2025</span></div>
+      <div class="zen-li"><span class="zen-li-title">Project Development Through CompNeuroSociety Pt. 3</span><span class="zen-meta">CNS · Jun 2025</span></div>
+      <div class="zen-li"><span class="zen-li-title">Could this be a model for neurons in the neocortex?</span><span class="zen-meta">Notes · May 2025</span></div>
+      <div class="zen-li"><span class="zen-li-title">SoundCloud Beats</span><span class="zen-meta">Music · May 2025</span></div>
     {% endif %}
   </div>
 </div>
