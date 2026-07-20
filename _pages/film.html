@@ -1,0 +1,37 @@
+---
+layout: zen
+title: "Film"
+permalink: /film/
+excerpt: "35mm frames — a slower way of seeing."
+---
+
+{% include base_path %}
+
+{% assign shots = site.static_files | where_exp: "f", "f.path contains '/images/film/'" | sort: "name" | reverse %}
+{% assign has_photos = false %}
+{% for f in shots %}{% assign ext = f.extname | downcase %}{% if ext == ".jpg" or ext == ".jpeg" or ext == ".png" or ext == ".webp" or ext == ".avif" %}{% assign has_photos = true %}{% break %}{% endif %}{% endfor %}
+
+<div class="zen-content zen-content--wide">
+  <h1 class="zen-h1">Film</h1>
+  <div class="zen-bar"></div>
+  <p class="zen-note" style="margin-bottom:30px">35mm frames — a slower way of seeing. Shot on film, scanned, unedited.</p>
+
+  {% if has_photos %}
+    <div class="zen-gallery">
+      {% for f in shots %}
+        {% assign ext = f.extname | downcase %}
+        {% if ext == ".jpg" or ext == ".jpeg" or ext == ".png" or ext == ".webp" or ext == ".avif" %}
+          <figure class="zen-shot">
+            <a href="{{ base_path }}{{ f.path }}" class="zen-shot-link">
+              <img src="{{ base_path }}{{ f.path }}" alt="35mm film photograph" loading="lazy" decoding="async">
+            </a>
+          </figure>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="zen-note">No rolls developed here yet — check back after the next batch comes off the scanner.</p>
+  {% endif %}
+</div>
+
+<script src="{{ base_path }}/assets/js/zen-gallery.js" defer></script>

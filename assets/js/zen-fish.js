@@ -5,7 +5,7 @@
  * Flocking (separation/alignment/cohesion) pattern after "BoidsCanvas" by
  * Mike Christensen — https://github.com/mschristensen/BoidsCanvas (MIT
  * License) — and Craig Reynolds' boids model. Full license texts ship in
- * /LICENSE-third-party at the site root.
+ * /THIRD-PARTY-LICENSES.txt at the site root.
  *
  * Behavior: evade — fish inside the flee radius dart away from the pointer;
  * explore — distant fish drift gently toward a pointer at rest.
@@ -81,10 +81,12 @@
     return f;
   }
 
+  /* Alphas capped at .22 so text crossed by a fish stays >= AA contrast
+     (verified against body/muted tiers in both themes). */
   function themeColor() {
     return document.documentElement.getAttribute("data-theme") === "dark"
-      ? "oklch(78% 0.05 350 / 0.34)"   /* pale plum, moonlit */
-      : "oklch(36% 0.06 250 / 0.30)";  /* deep water-blue shadow */
+      ? "oklch(78% 0.05 350 / 0.22)"   /* pale plum, moonlit */
+      : "oklch(36% 0.06 250 / 0.22)";  /* deep water-blue shadow */
   }
 
   /* Steering vector: head toward direction (tx,ty) at MAX_SPEED, capped. */
@@ -231,9 +233,11 @@
       ctx.lineTo(s1.x + nx * finLen - bdx * finBack, s1.y + ny * finLen - bdy * finBack);
       ctx.lineTo(s1.x + nx * 0.4 * s - bdx * finBack * 0.6, s1.y + ny * 0.4 * s - bdy * finBack * 0.6);
       ctx.closePath();
+      /* vertex order mirrored back so this subpath winds the same way as the
+         arcs — opposite winding would punch a nonzero-rule hole in the body */
       ctx.moveTo(s1.x - nx * 1.6 * s, s1.y - ny * 1.6 * s);
-      ctx.lineTo(s1.x - nx * finLen - bdx * finBack, s1.y - ny * finLen - bdy * finBack);
       ctx.lineTo(s1.x - nx * 0.4 * s - bdx * finBack * 0.6, s1.y - ny * 0.4 * s - bdy * finBack * 0.6);
+      ctx.lineTo(s1.x - nx * finLen - bdx * finBack, s1.y - ny * finLen - bdy * finBack);
       ctx.closePath();
 
       /* tail fin: extends past the last segment, with a gentle wag */
@@ -244,14 +248,15 @@
       var tnx = -tdy, tny = tdx;
       var wag = Math.sin(t * 0.008 + f.phase * 4) * 1.1 * s;
       var tailLen = 4.6 * s, tailHalf = 2.4 * s;
+      /* -tn vertex first so the triangle winds like the arcs (see fins) */
       ctx.moveTo(tipA.x, tipA.y);
-      ctx.lineTo(
-        tipA.x + tdx * tailLen + tnx * (tailHalf + wag),
-        tipA.y + tdy * tailLen + tny * (tailHalf + wag)
-      );
       ctx.lineTo(
         tipA.x + tdx * tailLen - tnx * (tailHalf - wag),
         tipA.y + tdy * tailLen - tny * (tailHalf - wag)
+      );
+      ctx.lineTo(
+        tipA.x + tdx * tailLen + tnx * (tailHalf + wag),
+        tipA.y + tdy * tailLen + tny * (tailHalf + wag)
       );
       ctx.closePath();
 
@@ -288,7 +293,11 @@
     if (e.pointerType === "touch") pointer.active = false;
   }, { passive: true });
   window.addEventListener("pointercancel", function () { pointer.active = false; });
-  window.addEventListener("pointerleave", function () { pointer.active = false; });
+  /* pointerleave doesn't bubble (never reaches window) — pointerout with a
+     null relatedTarget is the reliable viewport-exit signal */
+  window.addEventListener("pointerout", function (e) {
+    if (e.relatedTarget === null) pointer.active = false;
+  }, { passive: true });
   window.addEventListener("blur", function () { pointer.active = false; });
 
   window.addEventListener("resize", resize);

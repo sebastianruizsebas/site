@@ -8,9 +8,11 @@
   --zen-body-2: oklch(32% 0.02 60);
   --zen-line: oklch(83% 0.02 70);
   --zen-line-soft: oklch(86% 0.02 70);
-  --zen-muted: oklch(45% 0.02 65);
+  /* muted/faint darkened from the handoff's 45%/55% so small text keeps AA
+     contrast over the site-wide water + blob background */
+  --zen-muted: oklch(40% 0.02 65);
   --zen-muted-nav: oklch(40% 0.02 65);
-  --zen-faint: oklch(51% 0.02 65);
+  --zen-faint: oklch(43% 0.02 65);
   --zen-dot: oklch(62% 0.02 65);
   --zen-accent: oklch(48% 0.13 250);
   --zen-rule: oklch(48% 0.09 350);
@@ -26,6 +28,7 @@ html[data-theme="dark"] {
   --zen-line-soft: oklch(26% 0.012 260);
   --zen-muted: oklch(60% 0.01 260);
   --zen-muted-nav: oklch(70% 0.01 260);
+  /* README says 55%; held at 58% deliberately — 55% computes below AA */
   --zen-faint: oklch(58% 0.01 260);
   --zen-dot: oklch(45% 0.01 260);
   --zen-accent: oklch(74% 0.11 350);
@@ -98,11 +101,20 @@ body.zen {
 }
 html[data-theme="dark"] .zen-toggle .zen-knob { margin-right: 0; margin-left: auto; }
 
+/* ── Motto (sub-masthead line, every page) ── */
+.zen-motto {
+  margin: 0;
+  padding: 11px clamp(20px, 4vw, 40px);
+  border-bottom: 1px solid var(--zen-line);
+  font: italic 400 14px/1.5 'IBM Plex Serif', serif;
+  color: var(--zen-muted);
+}
+
 /* ── Fixed full-viewport background (every page, both themes) ──
    Water caustics + drifting blobs + legibility wash, per the design handoff.
    Content sits above in its own stacking contexts (z-index 1). */
 .zen-stage { position: relative; flex: 1; }
-.zen-nav, .zen-stage, .zen-footer { position: relative; z-index: 1; }
+.zen-nav, .zen-motto, .zen-stage, .zen-footer { position: relative; z-index: 1; }
 .zen-bg {
   position: fixed; inset: 0; z-index: 0;
   overflow: hidden; pointer-events: none;
@@ -357,4 +369,78 @@ html[data-theme="dark"] .zen-meta { color: var(--zen-faint); }
   justify-content: space-between;
   font: 400 11px/1.5 'IBM Plex Mono', monospace;
   color: var(--zen-muted);
+}
+
+/* ── Film gallery (masonry) ── */
+.zen-gallery { columns: 3 240px; column-gap: 18px; }
+.zen-shot { break-inside: avoid; margin: 0 0 18px; }
+.zen-shot-link { display: block; overflow: hidden; border-radius: 3px; }
+.zen-shot img {
+  width: 100%; display: block; border-radius: 3px;
+  background: color-mix(in oklab, var(--zen-ink) 8%, transparent);
+  transition: transform .35s ease, filter .35s ease;
+}
+@media (hover: hover) {
+  .zen-shot-link:hover img { transform: scale(1.03); filter: brightness(1.04); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .zen-shot img { transition: none; }
+  .zen-shot-link:hover img { transform: none; }
+}
+
+/* ── Lightbox ── */
+html.zen-lb-open { overflow: hidden; }
+.zen-lightbox {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  padding: clamp(12px, 4vw, 56px);
+  background: oklch(12% 0.012 260 / .93);
+}
+.zen-lightbox[hidden] { display: none; }
+.zen-lb-figure {
+  margin: 0; max-width: 100%; max-height: 100%;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.zen-lb-figure img {
+  max-width: 100%; max-height: 82vh; object-fit: contain;
+  border-radius: 2px; box-shadow: 0 10px 44px rgba(0, 0, 0, .5);
+}
+.zen-lb-cap {
+  font: 500 10.5px/1 'IBM Plex Mono', monospace;
+  letter-spacing: .1em; color: oklch(80% 0.01 260);
+}
+.zen-lb-close, .zen-lb-nav {
+  position: absolute; background: transparent; border: 0; cursor: pointer;
+  color: oklch(92% 0.006 260); line-height: 1; padding: 8px;
+  opacity: .7; transition: opacity .15s ease;
+}
+.zen-lb-close:hover, .zen-lb-nav:hover,
+.zen-lb-close:focus-visible, .zen-lb-nav:focus-visible { opacity: 1; }
+.zen-lb-close { top: 14px; right: 18px; font-size: 34px; }
+.zen-lb-nav { top: 50%; transform: translateY(-50%); font-size: 48px; }
+.zen-lb-prev { left: clamp(6px, 2vw, 24px); }
+.zen-lb-next { right: clamp(6px, 2vw, 24px); }
+@media (max-width: 560px) { .zen-lb-nav { font-size: 34px; } }
+
+/* ── Print ── */
+/* The water <img> and fish <canvas> are content elements, not backgrounds —
+   without this they stamp over the text of every printed page. Dark-mode
+   visitors also get the light palette so ink prints dark on white paper. */
+@media print {
+  .zen-bg, .zen-fish, .zen-toggle, .zen-motto { display: none !important; }
+  html[data-theme="dark"] {
+    --zen-bg: oklch(93% 0.022 75);
+    --zen-ink: oklch(26% 0.02 60);
+    --zen-ink-strong: oklch(24% 0.02 60);
+    --zen-body-2: oklch(32% 0.02 60);
+    --zen-line: oklch(83% 0.02 70);
+    --zen-line-soft: oklch(86% 0.02 70);
+    --zen-muted: oklch(40% 0.02 65);
+    --zen-muted-nav: oklch(40% 0.02 65);
+    --zen-faint: oklch(43% 0.02 65);
+    --zen-dot: oklch(62% 0.02 65);
+    --zen-accent: oklch(48% 0.13 250);
+    --zen-rule: oklch(48% 0.09 350);
+    --zen-knob: oklch(24% 0.02 60);
+  }
 }

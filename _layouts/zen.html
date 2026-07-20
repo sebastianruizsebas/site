@@ -13,8 +13,9 @@ layout: compress
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
       (function () {
-        var t = localStorage.getItem("theme") ||
-          (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        var t = null;
+        try { t = localStorage.getItem("theme"); } catch (e) {}
+        t = t || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
         if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
       })();
     </script>
@@ -51,6 +52,7 @@ layout: compress
         <a href="{{ base_path }}/talks/">Talks</a>
         <a href="{{ base_path }}/teaching/">Teaching</a>
         <a href="{{ base_path }}/portfolio/">Portfolio</a>
+        <a href="{{ base_path }}/film/">Film</a>
         <a href="{{ base_path }}/year-archive/">Field Notes</a>
         <a href="{{ base_path }}/cv/">CV</a>
         <button class="zen-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
@@ -58,6 +60,8 @@ layout: compress
         </button>
       </div>
     </nav>
+
+    <p class="zen-motto">The way the fish swim depends on their sensed surroundings</p>
 
     <div class="zen-stage">
       <main id="main" class="zen-body" tabindex="-1">
@@ -74,11 +78,12 @@ layout: compress
     <script>
       (function () {
         var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
+        var saveData = navigator.connection && navigator.connection.saveData;
 
-        /* The water gif is animated and heavy — skip it under prefers-reduced-motion
-           (the CSS also hides it there; skipping the fetch saves the download). */
+        /* The water gif is animated and heavy — skip the fetch under
+           prefers-reduced-motion (the CSS also hides it there) and Save-Data. */
         var water = document.querySelector(".zen-water[data-src]");
-        if (water && !(reduceMotion && reduceMotion.matches)) {
+        if (water && !saveData && !(reduceMotion && reduceMotion.matches)) {
           water.src = water.getAttribute("data-src");
           water.removeAttribute("data-src");
         }
@@ -94,7 +99,7 @@ layout: compress
             var dark = document.documentElement.getAttribute("data-theme") === "dark";
             if (dark) document.documentElement.removeAttribute("data-theme");
             else document.documentElement.setAttribute("data-theme", "dark");
-            localStorage.setItem("theme", dark ? "light" : "dark");
+            try { localStorage.setItem("theme", dark ? "light" : "dark"); } catch (e) {}
             reflectTheme();
           });
         }
