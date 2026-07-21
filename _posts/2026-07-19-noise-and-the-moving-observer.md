@@ -8,7 +8,6 @@ tags:
   - computational psychiatry
   - notes
 excerpt: "Perception is a decision made under noise, and precision is the knob the brain turns to deal with it. Notes on that knob, on reading some psychiatric differences through it, and on my honors thesis: making active inference testable by computing it inside Monty."
-mermaid: true
 keyloop: true
 ---
 
@@ -23,27 +22,6 @@ One quantity runs through all of these under different names. A statistician cal
 Predictive coding, and the free-energy accounts around it, treat the brain as predicting its own input and responding mainly to what it failed to predict. In those models precision sets how strongly a prediction error affects the estimate. Raise it on a channel and that channel's errors move the estimate more; lower it and the same errors move it less, so prior expectations carry more weight. Feldman and Friston (2010) argue that attention is largely the brain adjusting this setting. Predictive coding is widely used and also hard to falsify, so I am treating it as one way to look at this rather than as settled fact.
 
 Lower the signal-to-noise of the input and a system like this leans on what it already expected. As the senses become less reliable, the priors weigh more. That is the knob the rest of this rests on.
-
-<figure class="zen-figure">
-{% raw %}
-<pre class="mermaid">
-flowchart TB
-  W([world]) -->|noisy signal| S[sensory input]
-  P[prediction from priors] --> E[prediction error]
-  S --> E
-  E -->|weighted by precision| U[update belief]
-  U --> P
-  U --> B([percept])
-  K{{"precision: reliability, 1 / variance"}} -. sets the gain on .-> E
-  N[/lower signal-to-noise/] -. lowers .-> K
-  K -. "when low, lean on priors" .-> P
-  B --> A[act: move the sensor]
-  A -. changes the input .-> W
-  K -. miscalibrated .-> D["aberrant-precision accounts<br/>of psychosis"]
-</pre>
-{% endraw %}
-<figcaption>Perception as inference. A prediction error is the gap between what the priors expect and what the senses report, and precision sets how much that error counts. Lower the signal-to-noise and precision falls, so the percept leans on priors; the observer can also act to change the input. Miscalibrated precision is where the psychosis account enters.</figcaption>
-</figure>
 
 Precision in these models is a learned, context-dependent estimate the system sets for itself, so adding noise to a signal is only a rough stand-in for it, and a system can mis-set its own precision even with clean input. That last case is where the idea reaches psychiatry.
 
