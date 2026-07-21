@@ -23,6 +23,7 @@ layout: compress
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="{{ base_path }}/assets/css/zen.css">
+    {% if page.keyloop %}<link rel="stylesheet" href="{{ base_path }}/assets/css/zen-keyloop.css">{% endif %}
     <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png">
     <link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg">
@@ -107,5 +108,6 @@ layout: compress
     </script>
     <script src="{{ base_path }}/assets/js/zen-fish.js" defer></script>
     {% if page.mermaid %}<script type="module" src="{{ base_path }}/assets/js/zen-mermaid.js"></script>{% endif %}
+    {% if page.keyloop %}<script src="{{ base_path }}/assets/js/zen-keyloop.js" defer></script>{% endif %}
   </body>
 </html>
