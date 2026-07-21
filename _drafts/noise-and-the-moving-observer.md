@@ -46,12 +46,12 @@ O'Regan and Noë (2001) described seeing as an activity, where what you experien
 <rect x="252" y="44" width="176" height="76" rx="4" fill="var(--surf)" stroke="var(--line2)" stroke-width="0.5"/>
 <line x1="340" y1="44" x2="340" y2="120" stroke="var(--line)" stroke-width="0.5"/>
 <line x1="252" y1="82" x2="428" y2="82" stroke="var(--line)" stroke-width="0.5"/>
-<rect x="36" y="44" width="192" height="72" rx="6" fill="var(--surf)" stroke="var(--line2)" stroke-width="0.5"/>
+<rect x="36" y="44" width="192" height="72" rx="6" fill="var(--cab)" stroke="var(--line2)" stroke-width="0.5"/>
 <line x1="132" y1="44" x2="132" y2="116" stroke="var(--line)" stroke-width="0.5"/>
-<rect x="452" y="44" width="192" height="72" rx="6" fill="var(--surf)" stroke="var(--line2)" stroke-width="0.5"/>
+<rect x="452" y="44" width="192" height="72" rx="6" fill="var(--cab)" stroke="var(--line2)" stroke-width="0.5"/>
 <line x1="548" y1="44" x2="548" y2="116" stroke="var(--line)" stroke-width="0.5"/>
 <rect x="24" y="176" width="632" height="20" rx="3" fill="var(--surf)" stroke="var(--line2)" stroke-width="0.5"/>
-<rect x="24" y="196" width="632" height="104" rx="3" fill="var(--surf)" stroke="var(--line2)" stroke-width="0.5"/>
+<rect x="24" y="196" width="632" height="104" rx="3" fill="var(--cab)" stroke="var(--line2)" stroke-width="0.5"/>
 <line x1="230" y1="196" x2="230" y2="300" stroke="var(--line)" stroke-width="0.5"/>
 <line x1="452" y1="196" x2="452" y2="300" stroke="var(--line)" stroke-width="0.5"/>
 <rect x="40" y="206" width="176" height="32" rx="3" fill="none" stroke="var(--line2)" stroke-width="0.5"/>

@@ -3,7 +3,7 @@
  * prefers-color-scheme) so it flips with the rest of the page. */
 .keyfig{
   --fg:#2c2c2a;--fg2:#5f5e5a;--fg3:#8a8981;--line:#d8d6cd;--line2:#bcbab1;
-  --surf:#f6f4ee;--card:#ffffff;
+  --surf:#f6f4ee;--card:#ffffff;--cab:#d6e3f0;
   --pp:#534AB7;--pf:#EEEDFE;--pt:#26215C;
   --aa:#0F6E56;--af:#E1F5EE;--at:#04342C;
   --gk:#BA7517;--qc:#E24B4A;
@@ -19,7 +19,7 @@
 }
 html[data-theme="dark"] .keyfig{
   --fg:#ECEAE1;--fg2:#b4b2a9;--fg3:#8a8981;--line:#403f3a;--line2:#5a5954;
-  --surf:#2b2a25;--card:#38362f;
+  --surf:#2b2a25;--card:#38362f;--cab:#37485a;
   --pp:#AFA9EC;--pf:#3C3489;--pt:#EEEDFE;
   --aa:#5DCAA5;--af:#0F6E56;--at:#E1F5EE;
   --gk:#EF9F27;--qc:#F09595;
