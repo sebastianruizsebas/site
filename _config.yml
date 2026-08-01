@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Personal Website"
 title_separator          : "-"
 name                     : &name "Sebas Ruiz"
-description              : &description "Sebas Ruiz's academic website"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Sebas Ruiz's website"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://www.sebasruiz.site # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -93,7 +93,7 @@ teaser                   :  # filename of teaser fallback teaser image placed in
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : false
-read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
+read_more                : "enabled" # if enabled, adds "Read more" links to excerpts
 atom_feed:
   hide                   : false     # change to true to hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
@@ -113,14 +113,19 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Social media default site image
-og_description           :  # Social media default site image description
+og_image                 : "profile.png" # Social media default site image
+og_description           : "Sebas Ruiz - statistics and computational neuroscience at FSU. Founder of CompNeuroSociety."
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type                   : Person
+  name                   : "Sebastian Ruiz"
+  links:
+    - "https://orcid.org/0009-0005-2598-1815"
+    - "https://github.com/sebastianruizsebas"
+    - "https://www.linkedin.com/in/sebastiansebasruiz"
+    - "https://bsky.app/profile/lovecannons.bsky.social"
+    - "https://neuromatch.social/@sebastianruiz"
 
 
 # Analytics

@@ -1,5 +1,5 @@
 ---
-title: "Three rules, no boss"
+title: "Emergent collective fish behavior from three general rules"
 tags:
   - boids
   - collective behavior
