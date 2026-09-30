@@ -8,6 +8,6 @@ date: 2026-02-09
 location: "Tallahassee, FL, USA"
 ---
 
-Led weekly Project Meetings for the ORCA-funded CompNeuro-CREP Accelerator project focused on replicating a previously published model of the fly escape response.
+I led the weekly project meetings for the CompNeuro-CREP Accelerator project, which is funded by a $14,550 grant from the Open Research Community Accelerator (ORCA) Catalytic Awards Program, and where our team is replicating a previously published model of the fly escape response (the fast turn a fly makes away from something looming toward it).
 
 ![Project Meeting 3 Participants](/images/project1.jpg)

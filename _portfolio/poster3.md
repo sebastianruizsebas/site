@@ -1,6 +1,6 @@
 ---
 title: "Poster Presentation"
-excerpt: "From the Transfer Student Research and Leadership Symposium at Florida State University, Fall 2025."
+excerpt: "I presented this poster at Florida State University's Transfer Student Research and Leadership Symposium in October 2025."
 image: /images/20251020_TransferPoster.jpg
 collection: portfolio
 venue: "Florida State University, Honors, Scholars, and Fellows House"
@@ -10,4 +10,4 @@ location: "Tallahassee, FL, USA"
 
 ![Poster presentation at the FSU Transfer Student Research and Leadership Symposium](/images/20251020_TransferPoster.jpg)
 
-From the Transfer Student Research and Leadership Symposium at Florida State University, Fall 2025.
+I presented this poster at Florida State University's Transfer Student Research and Leadership Symposium in October 2025.

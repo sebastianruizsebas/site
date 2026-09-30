@@ -7,22 +7,22 @@ tags:
   - Thousand Brains Theory
   - computational psychiatry
   - notes
-excerpt: "Perception is a decision made under noise, and precision is the knob the brain turns to handle it. Notes on that knob, on the psychiatric accounts built from it, and on my honors thesis: making active inference testable inside Monty."
+excerpt: "Perception is a decision made under noise, and precision is the knob the brain turns to handle it. These are my notes on that knob, on the psychiatric accounts built from it, and on my honors thesis, where I am trying to make active inference testable inside Monty."
 keyloop: true
 ---
 
-Your senses deliver a noisy signal. The brain still has to commit to one account of what is out there, and that commitment is the problem I think cognition is mostly solving.
+Our senses deliver a noisy signal, but the brain still has to commit to one account of what is out there, and in my opinion that commitment is the main problem that cognition is solving.
 
-Under noise you weight each piece of evidence by its reliability. Add visual noise to a size judgment and people shift weight toward touch (Ernst & Banks, 2002). A statistician calls that weight precision. An engineer calls it signal-to-noise.
+Under noise, the sensible thing to do is weight each piece of evidence by how reliable it is. When Marc Ernst and Martin Banks added visual noise to a size judgment, people shifted their weight toward touch (Ernst and Banks 2002). A statistician would call that weight precision (the inverse of the variance, or how tightly a signal sits around its true value), and an engineer would call it signal-to-noise.
 
-Predictive coding treats the brain as predicting its own input and reacting mainly to what it got wrong. Precision sets how hard a prediction error pushes the estimate. Lower it and priors carry more weight. Feldman and Friston (2010) argue that attention is mostly the brain turning this knob. The idea is hard to falsify, so I treat it as one view, not settled fact.
+Predictive coding treats the brain as something that predicts its own input and reacts mainly to what it got wrong (the prediction error). In this framework, precision sets how hard a prediction error pushes the estimate, which means that when precision on the senses is lowered, the brain's priors (what it already expected before the input arrived) carry more of the weight. Harriet Feldman and Karl Friston argue that attention is mostly the brain turning this precision knob (Feldman and Friston 2010). However, the idea is hard to falsify, so I treat it as one view and not as settled fact.
 
-A system can mis-set its own precision on clean input, which is where this reaches psychiatry. These are hypotheses about mechanism. They say nothing about anyone's worth or character. Adams and colleagues (2013) describe psychosis as aberrant precision: sensory errors weighted too heavily, or priors too little. Autism has parallel accounts that disagree on direction (Pellicano & Burr, 2012). Behavior alone cannot separate them (Sterzer et al., 2018).
+This is also where the idea reaches psychiatry, because a system can mis-set its own precision even when the input it receives is clean. I want to be clear that these are hypotheses about mechanism, and they say nothing about anyone's worth or character. Rick Adams and colleagues describe psychosis as aberrant precision, where sensory errors are weighted too heavily or priors too little (Adams et al. 2013). Autism has parallel accounts that disagree with each other on the direction of the change (Pellicano and Burr 2012), and behavior alone cannot separate these accounts (Sterzer et al. 2018).
 
-A still observer can weight its cues and lean on priors, but it cannot go get more information. It has to move. Active inference treats action as inference: the system updates its beliefs to match the world, and acts so the input matches its predictions (Friston, 2010).
+A still observer can weight its cues and lean on its priors, but it cannot go and get more information, and to do that it has to move. Active inference treats action as a kind of inference, where the system both updates its beliefs to match the world and acts so that its input matches its predictions (Friston 2010). The figure below shows this loop as a search for car keys in a kitchen.
 
 <figure class="keyfig" id="k-fig">
-<p class="k-sr">A first-person kitchen search for car keys. A gaze reticle checks the hooks, a left drawer, a right drawer, and a dish. A thought bubble holds a top-down map; before each look a red question mark marks the model's prediction of where the keys are. Empty spots are ruled out and the guess narrows until the keys turn up in the dish, then the loop repeats.</p>
+<p class="k-sr">A first-person kitchen search for car keys. A gaze reticle checks the hooks, a left drawer, a right drawer, and a dish. A thought bubble holds a top-down map, and before each look a red question mark marks the model's prediction of where the keys are. Empty spots are ruled out and the guess narrows until the keys turn up in the dish, then the loop repeats.</p>
 <svg viewBox="0 0 680 380" role="img" xmlns="http://www.w3.org/2000/svg">
 <title>Searching a kitchen for keys, with predictions on an internal map</title>
 <desc>A schematic first-person kitchen with window, cabinets, counter, two drawers, a mug, a bowl, a dish, and a hook rail. A teal gaze reticle moves between spots. A purple thought-bubble map shows shaded circles for how likely the keys are at each spot, and a red question mark for the current prediction. Ruled-out spots grey and the belief concentrates until a gold key appears in the dish.</desc>
@@ -92,16 +92,16 @@ A still observer can weight its cues and lean on priors, but it cannot go get mo
 </div>
 <div id="k-phlabel">Looking</div>
 <div id="k-phdesc">the model bets on the hooks, go look</div>
-<figcaption>The same sense, interpret, act loop, shown as a kitchen search for car keys. Before each look the internal model posts a prediction (the red '?') of where the keys are, and checking an empty spot rules it out so the belief concentrates until it lands on the dish. Teal is looking and moving; purple is the mental map.</figcaption>
+<figcaption>The sense, interpret, and act loop, shown as a search for car keys in a kitchen. Before each look, the internal model makes a prediction (the red '?') of where the keys are, and checking an empty spot rules that spot out, so the belief narrows until it lands on the dish. Teal shows looking and moving, and purple shows the mental map.</figcaption>
 </figure>
 
-Monty is where I test that. It implements the Thousand Brains framework: the cortex learns objects by moving over them (Clay, Leadholm & Hawkins, 2024). To recognize one it keeps an "evidence" score per guess, updated as the sensor moves. That score is a heuristic and never becomes a probability. On clearly different objects it takes around 28 touches. With noise on similar objects, closer to 170.
+Monty is where I test this. Monty is an open-source sensorimotor learning system from the Thousand Brains Project, and it implements the idea that the neocortex learns objects by moving a sensor over them (Clay, Leadholm and Hawkins 2024). To recognize an object, Monty keeps an "evidence" score for each guess and updates it every time the sensor moves. That score is a heuristic, which means that it never becomes a probability. On clearly different objects Monty takes around 28 steps to recognize one, and with noise on similar objects it takes closer to 170.
 
-My honors thesis makes one change. Monty's matching tolerance, how close a sensed feature must be to count as a match, is a fixed number the author chose. I treat it as precision and let the system estimate it from experience. That turns the stored model into a real probability distribution, and belief, precision, and free energy become numbers I can check and break.
+My honors thesis makes one change to this. Monty's matching tolerance (how close a sensed feature has to be to a stored one to count as a match) is a fixed number that someone has to choose by hand. I treat that tolerance as precision and let the system estimate it from experience instead. In practical terms, this turns the stored model into a real probability distribution, so that belief, precision, and free energy become numbers that I can check and break.
 
-Then I can miscalibrate precision on purpose. Push trust too far toward the prediction and the loop stops learning. An empty spot rules nothing out, and the guess returns to where it expected the keys.
+Once that is in place, I can miscalibrate precision on purpose. If I push the system to trust its predictions too much, the loop stops learning, because an empty spot no longer rules anything out and the guess keeps returning to where it expected the keys to be.
 
-Monty recognizes objects. It is not a model of hallucination or delusion, and I have no clean result yet. But it has potential to model psychiatric conditions, bridging that gap is the work I want to do.
+To be honest about the limits, Monty is an object recognition system and not a model of hallucination or delusion, and I do not have a clean result yet. However, I think it has real potential as a testbed for psychiatric conditions, and bridging that gap is the work I want to do. Computational psychiatry has been proposed as a bridge from neuroscience to the clinic (Huys, Maia and Frank 2016), and in epilepsy there are already whole-brain models individualized to single patients (Jirsa et al. 2017). In my future research, I hope to use embodied models like Monty to find candidate mechanisms and biomarkers for psychiatric disorders, with the long-term goal of precision psychiatry at the level of the individual patient.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Poster Presentation"
-excerpt: "From a summer research internship at Carnegie Mellon University, Summer 2024."
+excerpt: "I presented this poster at the end of Carnegie Mellon University's 2024 summer undergraduate program in neural computation (uPNC), where I replicated previously published work using a CBGT (cortico-basal ganglia-thalamic) reinforcement learning agent."
 image: /images/IMG_7663.jpg
 collection: portfolio
 venue: "Carnegie Mellon University, Neuroscience Institute"
@@ -10,4 +10,4 @@ location: "Pittsburgh, PA, USA"
 
 ![Poster presentation at Carnegie Mellon University](/images/IMG_7663.jpg)
 
-From a summer research internship at Carnegie Mellon University, Summer 2024.
+I presented this poster at the end of Carnegie Mellon University's 2024 summer undergraduate program in neural computation (uPNC), where I replicated previously published work using a CBGT (cortico-basal ganglia-thalamic) reinforcement learning agent. My supervisors that summer were Timothy Verstynen, Ph.D., and Jack Burgess, Ph.D.

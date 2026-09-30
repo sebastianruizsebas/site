@@ -8,6 +8,8 @@ date: 2025-10-18
 location: "Tallahassee, FL, USA"
 ---
 
-Led a two-part workshop, the first part being an quickly ramping introduction to Python for general data science, and the second part including a tutorial on bootstrap hypothesis testing for neural data science, which referenced the Kramer and Eden book on the topic. Received compliments from 4th year Neuroscience Ph.D. student Yicheng Zheng on delivery.
+I led a two-part workshop, where the first part was a quickly ramping introduction to Python for general data science, and the second part was a tutorial on bootstrap hypothesis testing (testing a hypothesis by resampling your own data many times instead of relying on a formula) for neural data, based on Mark Kramer and Uri Eden's book *Case Studies in Neural Data Analysis*.
+
+Afterwards, Yicheng Zheng, a fourth-year Ph.D. student in neuroscience, complimented me on my delivery.
 
 ![Python for Neural Data Analysis workshop](/images/IMG_9212.JPG)

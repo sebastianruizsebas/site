@@ -5,32 +5,24 @@ tags:
   - collective behavior
   - Thousand Brains Theory
   - notes
-excerpt: "The fish behind this site follow three local rules and nobody is in charge. Behavior with no central controller is also how I think about brains, and about the flies I work on."
+excerpt: "The fish behind this site follow three local rules and nobody is in charge of them. Behavior with no central controller is also how I think about brains, and about the flies I work on."
 ---
 
-Move your cursor and the fish scatter. They regroup once you hold still.
+If you move your cursor across this page, the fish scatter away from it, and once you hold still they slowly regroup.
 
-The fish are a boids simulation, which Craig Reynolds published in 1987. Each fish follows three rules, and each rule only looks at its nearby neighbors:
+The fish are a boids simulation, which is a model of flocking that Craig Reynolds published in 1987. Each fish follows three rules, and each rule only looks at the neighbors within a short distance of it. The first rule is separation (do not crowd the fish next to you), the second is alignment (steer roughly the way your neighbors are steering), and the third is cohesion (drift toward the average position of the neighbors you can see). There is no leader fish and nothing coordinating the group from above, and the code really only has three parts: a perception radius, a weight for each rule, and the cursor, which the fish treat as a threat.
 
-- separation: don't crowd the fish next to you
-- alignment: steer roughly the way your neighbors steer
-- cohesion: drift toward the average position of the neighbors you can see
+The word for this is emergence, where simple local interactions repeated many times add up to complex group behavior. Tamás Vicsek and colleagues showed the bare version of this with particles that move at a fixed speed and take on the average heading of their neighbors, plus some noise (Vicsek et al. 1995). Once the noise drops past a certain point, the whole population starts moving together. However, a model like this only shows that a mechanism can produce flock-like behavior, which is a reason to take the mechanism seriously but not proof that real fish work this way (Sumpter 2006).
 
-There is no leader fish and nothing coordinating the group. The code has three parts: a perception radius, a weight per rule, and the cursor, which the fish treat as a threat.
+In real fish, those rules are senses wired to movement. Brian Partridge and Tony Pitcher went through them one sense at a time (Partridge and Pitcher 1980). Vision tracks where a neighbor is and which way it is pointing, while the lateral line (the row of flow sensors running down a fish's side) tracks speed and holds spacing. When the fish could not see, the school spread out, and when the lateral line was knocked out, the school packed in tighter.
 
-The word for this is emergence: simple local interactions, repeated many times, add up to complex group behavior. Vicsek and colleagues (1995) showed the bare version, where particles move at fixed speed and take their neighbors' average heading, plus noise. Lower the noise past a point and the whole population moves together. These are models that produce flock-like behavior, which is a reason to take the mechanism seriously and not proof that real fish work this way (Sumpter, 2006).
+Because of this, behavior can look coordinated and even smart with nothing in the middle deciding anything. Rodney Brooks built robots on that premise, using simple processes wired straight from sensing to acting with no central model of the world in between, and the robots still worked (Brooks 1991). The Thousand Brains Theory that I work with (Jeff Hawkins' account of the neocortex as thousands of cortical columns that each learn a model of the world and then vote) has no headquarters either. However, this is only an analogy, and a school of fish is not a brain.
 
-In real fish those rules are senses wired to movement. Partridge and Pitcher (1980) went through them sense by sense. Vision tracks where a neighbor is and which way it points, while the lateral line (the row of flow sensors down a fish's side) tracks speed and holds spacing. Blind the fish and the school spreads out. Knock out the lateral line and it packs in tighter.
+So why would fish end up this way in the first place? Mostly because of predators. Christos Ioannou, Vishwesha Guttal, and Iain Couzin had bluegill sunfish hunt virtual prey, and the prey that got caught least often were the ones moving in a coordinated, schooling-like way (Ioannou et al. 2012). The cursor on this page is a pretty crude predator, so feel free to go poke at them.
 
-Because of this, behavior can look coordinated, even smart, with nothing in the middle deciding anything. Rodney Brooks (1991) built robots on that premise: simple processes wired straight from sensing to acting, no central model in between. The robots still worked.
+I work on these same kinds of loops, but in flies instead of fish. In one project, through CompNeuroSociety, our team is replicating a published model of the fly escape response (the fast swerve a fly makes away from something looming toward it). In another, at the Howard Hughes Medical Institute's Janelia Research Campus, I am using reinforcement learning to teach a fly-like agent with a simulated body how to move. Both projects have the same shape as one fish fleeing your cursor, where something senses a threat nearby and turns it into an action.
 
-The Thousand Brains idea I work in (Jeff Hawkins' account of the cortex as thousands of columns that each model the world and vote) has no headquarters either. That is an analogy, and a school is not a brain.
-
-Why would fish end up this way? Predators. Ioannou, Guttal and Couzin (2012) had bluegill sunfish hunt virtual prey. The prey caught least often moved in a coordinated, schooling-like way. The cursor on this page is a crude predator, so go poke them.
-
-I work on these same loops in flies instead of fish. One project replicates a fly's escape response, the fast swerve away from something looming. Another, at Janelia, puts a fly-like agent in a body and teaches it to move through reinforcement. Both have the shape of one boid fleeing your cursor: something senses a threat nearby and turns it into an action.
-
-The fish are following three rules, which gets you most of what you see, and I don't want to claim more.
+The fish on this page are only following three rules, which gets you most of what you see, and I do not want to claim more than that.
 
 ---
 

@@ -8,4 +8,4 @@ date: 2025-03-04
 location: "Tallahassee, FL, USA"
 ---
 
-Led the inaugural general body meeting of CompNeuroSociety, which included a workshop on introductory neuroscience, referencing the Trappenberg book on the topic.
+I led the first general body meeting of CompNeuroSociety (a student organization for computational neuroscience at FSU), which included a workshop I gave as an introduction to computational neuroscience based on Thomas Trappenberg's textbook, *Fundamentals of Computational Neuroscience*.
